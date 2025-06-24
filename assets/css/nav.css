@@ -7,15 +7,17 @@ nav ul{
     list-style: none;
     align-items: center;
     display: flex;
-    justify-content: space-between;
     margin: 0;
     padding: 0;
     width: 90%;
 }
 .nav-top{
     position: absolute;
+    background-color: aliceblue;
+    border-radius: 24px 24px 0 0;
     width: 100%;
     top:0;
+    padding-bottom: 8px;
 }
 .nav-bottom{
     position: absolute;
@@ -24,17 +26,17 @@ nav ul{
     width: 100%;
     bottom: 0;
 }
-
+.nav-bottom ul{
+    justify-content: space-between;
+}
 button, a{
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 12px;
-    width: 72px;
     height: 48px;
     transition: all .3s;
     cursor: pointer;
-    
 }
 .nav-bottom button, .nav-bottom a{
     background-color: aliceblue;
@@ -42,15 +44,47 @@ button, a{
     border-width: 2px 0px 0px 0px;
     border-color: aliceblue;
     margin: 0 12px 12px 12px;
+    width: 72px;
+}
+.main-btn{
+    height: 72px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 36px;
+    border-style: solid;
+    border-width: 2px !important;
+}
+li:has(.main-btn){
+    position: relative;
+    top: -12px;
 }
 .nav-top button, .nav-top a{
-    background-color: white;
+    background-color: aliceblue;
     border-style: solid;
-    border-width: 2px;
-    border-color: white;
-    border-radius: 20px;
-    margin: 24px 12px 12px 0;
+    border-width: 0px 0px 2px 0px;
+    border-color: aliceblue;
+    width: 64px;
+    margin: 36px 6px 6px 0;
 }
- button:hover, a:hover{
+.nav-top p{
+    margin: 12px 0 0 0;
+    font-size: 12px;
+    line-height: 1.4;
+}
+.nav-top em{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+}
+.nav-top ul{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-top-buttons{
+    display: flex;
+    right: 0;
+    justify-content: flex-end;
+}
+button:hover, a:hover{
     border-color: black;
 }
