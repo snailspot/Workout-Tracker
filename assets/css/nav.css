@@ -113,4 +113,5 @@ button:hover:not(.active) .icon path{
 }
 .active{
     color: var(--highlight-2-color);
+    stroke: var(--highlight-2-color) !important;
 }
