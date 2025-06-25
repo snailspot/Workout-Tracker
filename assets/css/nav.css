@@ -13,7 +13,7 @@ nav ul{
 }
 .nav-top{
     position: absolute;
-    background-color: aliceblue;
+    background-color: var(--nav-bg-color);
     border-radius: var(--m-padding) var(--m-padding) 0 0;
     width: 100%;
     top:0;
@@ -22,7 +22,7 @@ nav ul{
 }
 .nav-bottom{
     position: absolute;
-    background-color: aliceblue;
+    background-color: var(--nav-bg-color);
     border-radius: 0 0 var(--m-padding) var(--m-padding);
     width: 100%;
     bottom: 0;
@@ -37,22 +37,24 @@ button, a{
     justify-content: center;
     font-size: var(--caption);
     transition: all .3s;
+    color: var(--main-text-color);
+    font-weight: bold;
     cursor: pointer;
     height: 48px;
 }
 .nav-bottom button, .nav-bottom a{
-    background-color: aliceblue;
+    background-color: var(--nav-bg-color);
     border-style: solid;
     border-width: var(--border-width) 0px 0px 0px;
-    border-color: aliceblue;
+    border-color: var(--nav-bg-color);
     margin: 0 var(--sm-padding) var(--sm-padding) var(--sm-padding);
     width: 72px;
 }
 .main-btn{
     height: 68px;
     width: 68px !important;
-    background-color: aqua !important;
     font-size: var(--small-headline);
+    color: var(--main-text-color);
     font-weight: bold;
     border-radius: 36px;
     border-style: solid;
@@ -63,23 +65,25 @@ li:has(.main-btn){
     bottom: var(--sm-padding);
 }
 .nav-top button, .nav-top a{
-    background-color: aliceblue;
+    background-color: var(--nav-bg-color);
     border-style: solid;
     border-width: 0px 0px var(--border-width) 0px;
-    border-color: aliceblue;
+    border-color: var(--nav-bg-color);
     width: 64px;
     height: 52px;
     margin: var(--l-padding) var(--xs-padding) var(--sm-padding) 0;
 }
 .nav-top p{
     margin: var(--sm-padding) 0 0 0;
+    color: var(--sub-text-color);
     font-size: var(--caption);
+    font-weight: bold;
     line-height: 1.4;
 }
 .nav-top em{
     font-size: var(--small-headline);
+    color: var(--main-text-color);
     font-style: normal;
-    font-weight: bold;
 }
 .nav-top ul{
     display: flex;
@@ -90,20 +94,23 @@ li:has(.main-btn){
     right: 0;
     justify-content: flex-end;
 }
-button:hover, a:hover{
-    border-color: orange;
-}
-.main-btn:hover{
-    border-color: aliceblue;
-    transform: scale(1.05);
-}
 .icon{
     max-width: 36px;
     max-height: 36px;
     fill: none;
-    stroke: darkgray;
+    stroke: var(--main-text-color);
     transition: all .3s;
 }
-button:hover .icon path{
-    stroke: orange;
+button:hover:not(.active), a:hover:not(.active){
+    border-color: var(--highlight-color);
+    color: var(--highlight-color);
+}
+button:hover:not(.active) .icon path{
+    stroke: var(--highlight-color);
+}
+.main-btn:hover:not(.active){
+    transform: scale(1.05);
+}
+.active{
+    color: var(--highlight-2-color);
 }

@@ -1,6 +1,7 @@
 body{
-    background-color: lightgrey;
+    background-color: var(--bg-color);
     font-family: Arial, Helvetica, sans-serif;
+    color: var(--main-text-color);
 }
 :root{
     /* Variables for spacing */
@@ -13,7 +14,16 @@ body{
     --small-headline: 16px;
     --hero-headline: 36px;
     --sub-heading: 24px;
-    --border-width: 3px
+    --border-width: 3px;
+    /* Light mode colors */
+    --bg-color: #838383;
+    --screen-color: #f1f0ef;
+    --nav-bg-color: #dde3e4;
+    --main-text-color: #56524B;
+    --sub-text-color: #72706c;
+    --highlight-color: #eead6c;
+    --highlight-2-color: #d57d3e;
+    
 }
 .app-container{
     display: flex;
@@ -21,7 +31,7 @@ body{
     width: 600px;
     height: 784px;
     border-radius: var(--m-padding);
-    background-color: white;
+    background-color: var(--screen-color);
     position: relative;
     margin: 0 auto;
     padding: 0;
