@@ -3,12 +3,21 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: var(--main-text-color);
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 :root{
     /* Variables for spacing */
     --xs-padding: 8px;
     --sm-padding: 12px;
     --m-padding: 24px;
     --l-padding: 36px;
+    /* Variables for formatting */
+    --input-width: 60px;
+    --input-height: 24px;
+    --divider-height: 32px;
     /* Font sizes */
     --caption: 12px;
     --small-headline: 16px;
@@ -23,6 +32,7 @@ body{
     --sub-text-color: #72706c;
     --highlight-color: #eead6c;
     --highlight-2-color: #d57d3e;
+    --highlight-3-color: #d9bc99;
     
 }
 .app-container{
@@ -41,6 +51,9 @@ body{
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    margin: 80px var(--m-padding) 0 var(--m-padding);
-
+    width: 90%;
+    margin: 80px 10%;
+}
+h1{
+    font-size: var(--hero-headline);
 }

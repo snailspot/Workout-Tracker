@@ -1,0 +1,73 @@
+.exercise-list{
+    list-style: none;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.list-container{
+    width: 100%;
+}
+.exercise-list li{
+    padding: var(--sm-padding) var(--sm-padding);
+    background-color: var(--nav-bg-color);
+
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    font-size: var(--caption);
+    font-weight: bold;
+    border-radius: var(--sm-padding);
+    margin: var(--sm-padding) 0;
+    width: 100%;
+
+    transition: all 0.3s;
+    /* Stops list text from being able to be selected by user */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.exercise-list li:hover{
+    background-color: var(--highlight-3-color);
+    color: var(--screen-color);
+}
+.exercise-list li span{
+    margin: 0 0 0 var(--xs-padding);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.exercise-list li button{
+    font-size: var(--caption);
+    text-align: center;
+    height: var(--input-height);
+    width: var(--input-width);
+    border:none;
+    border-radius: var(--xs-padding);
+    margin: 0 0 0 var(--xs-padding);
+    color: var(--sub-text-color);
+    cursor:text;
+}
+.exercise-list li button:hover{
+    color: var(--main-text-color);
+}
+.exercise-name{
+    font-size: var(--small-headline);
+    font-weight: bold;
+}
+.exercise-name div{
+    border-left: 4px solid var(--highlight-2-color);
+    height: var(--divider-height);
+    margin-left: var(--sm-padding);
+}
+.right-btns{
+    margin-left: auto;
+    display: flex;
+    font-size: var(--small-headline);
+    margin-right: var(--xs-padding);
+}
