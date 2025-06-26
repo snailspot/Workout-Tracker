@@ -6,7 +6,18 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/daily.css">
-    <title>Home</title>
+    <title>Today</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const buttons = document.querySelectorAll("li.exercise button");
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    button.classList.toggle("checked-set");
+                    button.innerHTML = button.classList.contains("checked-set") ? '\u2713' : "";
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="app-container">
@@ -63,16 +74,51 @@
         <div class="main">
             <header>
                 <h1>Push (Strength)</h1>
+                <h2>DD/MM/YY</h2>
             </header>
             <div class="list-container">
                 <ul class="exercise-list">
-                    <li><span class="exercise-name">Ring Dips<div></div></span>
-                        <span>Reps: <button type="number">10-12</button></span>
-                        <span>Sets: <button type="number">4</button></span>
-                        <div class="right-btns">
-                            <span class="expand">+</span>
-                            <span class="close">X</span>
-                        </div>
+                    <li class="exercise"><ul><li><span class="exercise-name">Weighted Ring Dips</span></li>
+                        <li><span class="notes">Last set drop set</span></li>
+                        <li><button type="button"></button>
+                            <span>Set 1<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="button"></button>
+                            <span>Set 2<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="button"></button>
+                            <span>Set 3<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        </ul>
+                    </li>
+                    <li class="exercise"><ul><li><span class="exercise-name">Ring pushups</span></li>
+                        <li><span class="notes">Myorep match sets</span></li>
+                        <li><button type="button"></button>
+                            <span>Set 1<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span></li>
+                        <li><button type="button"></button>
+                            <span>Set 2<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span></li>
+                        <li><button type="button"></button>
+                            <span>Set 3<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span></li>
+                        </ul>
+                    </li>
+                    <li class="exercise"><ul><li><span class="exercise-name">Dead hangs</span></li>
+                        <li><span class="notes">Myorep match sets</span></li>
+                        <li><button type="button"></button>
+                            <span>Set 1<div></div></span>
+                            <span>Time: <input type="number" placeholder="100s"></span></li>
+                        <li><button type="button"></button>
+                            <span>Set 2<div></div></span>
+                            <span>Time: <input type="number" placeholder="100s"></span></li>
+                        <li><button type="button"></button>
+                            <span>Set 3<div></div></span>
+                            <span>Time: <input type="number" placeholder="100s"></span></li>
+                        </ul>
                     </li>
                 </ul>
             </div>

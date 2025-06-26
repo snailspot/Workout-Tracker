@@ -1,89 +1,110 @@
 nav{
-    height: 60px;
     display: flex;
     justify-content: center;
+    height: 60px;
 }
 nav ul{
-    list-style: none;
-    align-items: center;
     display: flex;
+    align-items: center;
     margin: 0;
     padding: 0;
     width: 90%;
+
+    list-style: none;
 }
 .nav-top{
-    position: absolute;
-    background-color: var(--nav-bg-color);
-    border-radius: var(--m-padding) var(--m-padding) 0 0;
     width: 100%;
     top:0;
     padding-bottom: var(--xs-padding);
+
+    background-color: var(--nav-bg-color);
+
+    border-radius: var(--m-padding) var(--m-padding) 0 0;
     
+    position: absolute;
 }
 .nav-bottom{
-    position: absolute;
-    background-color: var(--nav-bg-color);
-    border-radius: 0 0 var(--m-padding) var(--m-padding);
     width: 100%;
     bottom: 0;
+
+    background-color: var(--nav-bg-color);
+
+    border-radius: 0 0 var(--m-padding) var(--m-padding);
+
+    position: absolute;
 }
 .nav-bottom ul{
     justify-content: space-between;
 }
 button, a{
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    font-size: var(--caption);
-    transition: all .3s;
-    color: var(--main-text-color);
-    font-weight: bold;
-    cursor: pointer;
     height: 48px;
+    
+    font-weight: bold;
+    font-size: var(--caption);
+
+    color: var(--main-text-color);
+
+    cursor: pointer;
+    
+    transition: all .3s;
 }
 .nav-bottom button, .nav-bottom a{
-    background-color: var(--nav-bg-color);
+    margin: 0 var(--sm-padding) var(--sm-padding) var(--sm-padding);
+    width: 72px;
+
     border-style: solid;
     border-width: var(--border-width) 0px 0px 0px;
     border-color: var(--nav-bg-color);
-    margin: 0 var(--sm-padding) var(--sm-padding) var(--sm-padding);
-    width: 72px;
+
+    background-color: var(--nav-bg-color);
 }
 .main-btn{
     height: 68px;
     width: 68px !important;
-    font-size: var(--small-headline);
-    color: var(--main-text-color);
+
     font-weight: bold;
+    font-size: var(--small-headline);
+
     border-radius: 36px;
     border-style: solid;
     border-width: 0 !important;
+
+    color: var(--main-text-color);
 }
 li:has(.main-btn){
-    position: relative;
     bottom: var(--sm-padding);
+
+    position: relative;
 }
 .nav-top button, .nav-top a{
-    background-color: var(--nav-bg-color);
-    border-style: solid;
-    border-width: 0px 0px var(--border-width) 0px;
-    border-color: var(--nav-bg-color);
     width: 64px;
     height: 52px;
     margin: var(--l-padding) var(--xs-padding) var(--sm-padding) 0;
+
+    border-style: solid;
+    border-width: 0px 0px var(--border-width) 0px;
+    border-color: var(--nav-bg-color);
+
+    background-color: var(--nav-bg-color);
 }
 .nav-top p{
     margin: var(--sm-padding) 0 0 0;
-    color: var(--sub-text-color);
+
     font-size: var(--caption);
     font-weight: bold;
     line-height: 1.4;
+
+    color: var(--sub-text-color);
 }
 .nav-top em{
-    font-size: var(--small-headline);
-    color: var(--main-text-color);
     font-style: normal;
+    font-size: var(--small-headline);
+
+    color: var(--main-text-color);
 }
 .nav-top ul{
     display: flex;
@@ -91,14 +112,16 @@ li:has(.main-btn){
 }
 .nav-top-buttons{
     display: flex;
-    right: 0;
     justify-content: flex-end;
+    right: 0;
 }
 .icon{
     max-width: 36px;
     max-height: 36px;
+
     fill: none;
     stroke: var(--main-text-color);
+    
     transition: all .3s;
 }
 button:hover:not(.active), a:hover:not(.active){

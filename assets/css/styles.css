@@ -1,6 +1,7 @@
 body{
-    background-color: var(--bg-color);
     font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--bg-color);
     color: var(--main-text-color);
 }
 input[type=number]::-webkit-inner-spin-button, 
@@ -18,11 +19,13 @@ input[type=number]::-webkit-outer-spin-button {
     --input-width: 60px;
     --input-height: 24px;
     --divider-height: 32px;
+    --check-height-width: 16px;
     /* Font sizes */
     --caption: 12px;
     --small-headline: 16px;
     --hero-headline: 36px;
     --sub-heading: 24px;
+    --check-mark: 20px;
     --border-width: 3px;
     /* Light mode colors */
     --bg-color: #838383;
@@ -30,6 +33,7 @@ input[type=number]::-webkit-outer-spin-button {
     --nav-bg-color: #dde3e4;
     --main-text-color: #56524B;
     --sub-text-color: #72706c;
+    --scroll-bar-color: #c3c4bf;
     --highlight-color: #eead6c;
     --highlight-2-color: #d57d3e;
     --highlight-3-color: #d9bc99;
@@ -38,22 +42,51 @@ input[type=number]::-webkit-outer-spin-button {
 .app-container{
     display: flex;
     justify-content: center;
-    width: 600px;
-    height: 784px;
-    border-radius: var(--m-padding);
-    background-color: var(--screen-color);
-    position: relative;
     margin: 0 auto;
     padding: 0;
+    width: 600px;
+    height: 784px;
+    
+    border-radius: var(--m-padding);
+
+    background-color: var(--screen-color);
+
+    position: relative;
 }
 .main{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    width: 90%;
-    margin: 80px 10%;
+    width: 100%;
+    height: 620px;
+    margin: 84px 12px;
+
+    text-align: center;
+
+    overflow-y: scroll;
 }
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--screen-color); 
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-bar-color); 
+    border-radius: 4px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--sub-text-color); 
+}
+
 h1{
     font-size: var(--hero-headline);
+}
+h2{
+    font-size: var(--sub-heading);
+    font-weight: lighter;
+    margin-top: calc(-1 * var(--sm-padding));
 }

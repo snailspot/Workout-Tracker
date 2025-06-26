@@ -1,73 +1,112 @@
 .exercise-list{
-    list-style: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    display: flex;
     margin: 0;
     padding: 0;
     width: 100%;
+
+    list-style: none;
 }
 .list-container{
-    width: 100%;
+    width: 80%;
 }
-.exercise-list li{
-    padding: var(--sm-padding) var(--sm-padding);
-    background-color: var(--nav-bg-color);
-
-    cursor: pointer;
+.exercise{
+    width: 100%;
+    margin: 0;
+    border-top: 2px solid var(--highlight-2-color);
+}
+.exercise li{
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin: var(--xs-padding) 0 0 0;
+    padding: var(--xs-padding) 0 0 0;
 
     font-size: var(--caption);
     font-weight: bold;
-    border-radius: var(--sm-padding);
-    margin: var(--sm-padding) 0;
-    width: 100%;
-
+    
     transition: all 0.3s;
-    /* Stops list text from being able to be selected by user */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
-.exercise-list li:hover{
-    background-color: var(--highlight-3-color);
-    color: var(--screen-color);
+.exercise-list li:last-child{
+    margin: var(--xs-padding) 0 var(--sm-padding) 0;
 }
 .exercise-list li span{
-    margin: 0 0 0 var(--xs-padding);
     display: flex;
-    align-items: center;
     flex-direction: row;
+    align-items: center;
+    
+    margin: 0 var(--m-padding) 0 0 ;
 }
-.exercise-list li button{
-    font-size: var(--caption);
-    text-align: center;
+.exercise input[type="number"]{
     height: var(--input-height);
     width: var(--input-width);
+    margin: 0 0 0 var(--xs-padding);
+
+    font-weight: bold;
+    font-size: var(--caption);
+    text-align: center;
+
     border:none;
     border-radius: var(--xs-padding);
-    margin: 0 0 0 var(--xs-padding);
+    
     color: var(--sub-text-color);
-    cursor:text;
+    background-color: var(--nav-bg-color);
+}
+.exercise input:not(:placeholder-shown){
+    background-color: var(--highlight-color);
+    color: var(--screen-color);
+}
+.exercise button{
+    height: var(--check-height-width);
+    width: var(--check-height-width);
+    margin: 0 var(--xs-padding) 0 0;
+
+    border: 0px;
+    border-radius: var(--xs-padding);
+
+    background-color: var(--nav-bg-color);
+}
+.exercise button:hover{
+    background-color: var(--highlight-color);
+}
+.exercise .checked-set{
+    padding-bottom: 8px;
+    padding-left: 8px;
+
+    font-size: var(--check-mark);
+
+    background-color: var(--highlight-color);
 }
 .exercise-list li button:hover{
     color: var(--main-text-color);
 }
 .exercise-name{
+    margin: 0 !important;
+
     font-size: var(--small-headline);
-    font-weight: bold;
+    font-weight: bold; 
 }
-.exercise-name div{
-    border-left: 4px solid var(--highlight-2-color);
+.exercise div{
     height: var(--divider-height);
     margin-left: var(--sm-padding);
+
+    border-left: 3px solid var(--highlight-2-color);
 }
 .right-btns{
     margin-left: auto;
-    display: flex;
-    font-size: var(--small-headline);
     margin-right: var(--xs-padding);
+    display: flex;
+
+    font-size: var(--small-headline);
+}
+.notes{
+    width: 96%;
+    padding: var(--xs-padding) var(--sm-padding);
+    margin: 0 calc(-1*var(--m-padding)) !important;
+
+    border-radius: var(--sm-padding);
+
+    background-color: var(--nav-bg-color);
+    color: var(--sub-text-color);
 }
