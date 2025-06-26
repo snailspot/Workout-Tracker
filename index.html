@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/daily.css">
+    <script src="assets/js/script.js"></script>
     <title>Today</title>
     <script>
         document.addEventListener('DOMContentLoaded', function(){
@@ -23,10 +24,10 @@
     <div class="app-container">
         <nav class="nav-top">
             <ul>
-                <li><p><em>Welcome back user!</em>
-                    <br>Today's date is: DD/MM/YY</p></li>
+                <li><p id="version"></p>
+                    <p id="date"></p></li>
                 <li><ul class="nav-top-buttons">
-                    <li><button>
+                    <li><button title="Previous Workout">
                         <svg class="icon" width="100%" height="100%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.02326;">
                         <g transform="matrix(1,0,0,1,2.67593,0.375623)">
                             <path d="M31.605,16.979L12.381,32.531L31.534,48.819" style="stroke-width:6.25px;"/>
@@ -36,7 +37,7 @@
                         </g>
                     </svg>
                     </button></li>
-                    <li><button>
+                    <li><button title="Next Workout">
                         <svg class="icon" width="100%" height="100%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.02326;">
                         <g transform="matrix(-1,0,0,1,67.3241,0.375623)">
                             <path d="M31.605,16.979L12.381,32.531L31.534,48.819" style="stroke-width:6.25px;"/>
@@ -46,7 +47,7 @@
                         </g>
                     </svg>
                     </button></li>
-                    <li><button>
+                    <li><button title="Skip/Reorder Workout">
                         <svg class="icon" width="100%" height="100%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:3.02326;">
                         <g id="Layer1" transform="matrix(0.946837,0,0,0.946926,2.27594,4.79247)">
                             <g transform="matrix(1.08299,-0.128242,0.128051,1.08138,-8.02645,-1.65132)">

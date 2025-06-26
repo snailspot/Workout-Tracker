@@ -79,9 +79,11 @@ button, a{
 
     font-size: var(--caption);
     font-weight: bold;
-    line-height: 1.4;
 
     color: var(--sub-text-color);
+}
+.nav-top p + p{
+    margin: 4px 0 0 0;
 }
 .nav-top em{
     font-style: normal;
