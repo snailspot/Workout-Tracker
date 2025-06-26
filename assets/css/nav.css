@@ -62,24 +62,6 @@ button, a{
 
     background-color: var(--nav-bg-color);
 }
-.main-btn{
-    height: 68px;
-    width: 68px !important;
-
-    font-weight: bold;
-    font-size: var(--small-headline);
-
-    border-radius: 36px;
-    border-style: solid;
-    border-width: 0 !important;
-
-    color: var(--main-text-color);
-}
-li:has(.main-btn){
-    bottom: var(--sm-padding);
-
-    position: relative;
-}
 .nav-top button, .nav-top a{
     width: 64px;
     height: 52px;
@@ -121,7 +103,7 @@ li:has(.main-btn){
 
     fill: none;
     stroke: var(--main-text-color);
-    
+
     transition: all .3s;
 }
 button:hover:not(.active), a:hover:not(.active){
@@ -130,9 +112,6 @@ button:hover:not(.active), a:hover:not(.active){
 }
 button:hover:not(.active) .icon path{
     stroke: var(--highlight-color);
-}
-.main-btn:hover:not(.active){
-    transform: scale(1.05);
 }
 .active{
     color: var(--highlight-2-color);
