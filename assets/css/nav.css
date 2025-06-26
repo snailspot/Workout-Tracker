@@ -26,7 +26,7 @@ nav ul{
 .nav-bottom{
     width: 100%;
     bottom: 0;
-
+    
     background-color: var(--nav-bg-color);
 
     border-radius: 0 0 var(--m-padding) var(--m-padding);
@@ -45,6 +45,7 @@ button, a{
     
     font-weight: bold;
     font-size: var(--caption);
+    text-decoration: none;
 
     color: var(--main-text-color);
 
@@ -110,7 +111,7 @@ button:hover:not(.active), a:hover:not(.active){
     border-color: var(--highlight-color);
     color: var(--highlight-color);
 }
-button:hover:not(.active) .icon path{
+button:hover:not(.active) .icon path, a:hover:not(.active) .icon path{
     stroke: var(--highlight-color);
 }
 .active{

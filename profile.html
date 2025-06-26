@@ -5,19 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/nav.css">
-    <link rel="stylesheet" href="assets/css/daily.css">
-    <title>Today</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', function(){
-            const buttons = document.querySelectorAll("li.exercise button");
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    button.classList.toggle("checked-set");
-                    button.innerHTML = button.classList.contains("checked-set") ? '\u2713' : "";
-                });
-            });
-        });
-    </script>
+    <title>Profile</title>
 </head>
 <body>
     <div class="app-container">
@@ -73,55 +61,8 @@
         </nav>
         <div class="main">
             <header>
-                <h1>Push (Strength)</h1>
-                <h2>DD/MM/YY</h2>
+                <h1>&gt;User&lt; Profile</h1>
             </header>
-            <div class="list-container">
-                <ul class="exercise-list">
-                    <li class="exercise"><ul><li><span class="exercise-name">Weighted Ring Dips</span></li>
-                        <li><span class="notes">Last set drop set</span></li>
-                        <li><button type="button"></button>
-                            <span>Set 1<div></div></span>
-                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
-                            <span>Weight (kg): <input type="number" placeholder="22"></li>
-                        <li><button type="button"></button>
-                            <span>Set 2<div></div></span>
-                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
-                            <span>Weight (kg): <input type="number" placeholder="22"></li>
-                        <li><button type="button"></button>
-                            <span>Set 3<div></div></span>
-                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
-                            <span>Weight (kg): <input type="number" placeholder="22"></li>
-                        </ul>
-                    </li>
-                    <li class="exercise"><ul><li><span class="exercise-name">Ring pushups</span></li>
-                        <li><span class="notes">Myorep match sets</span></li>
-                        <li><button type="button"></button>
-                            <span>Set 1<div></div></span>
-                            <span>Reps: <input type="number" placeholder="10 - 12"></span></li>
-                        <li><button type="button"></button>
-                            <span>Set 2<div></div></span>
-                            <span>Reps: <input type="number" placeholder="10 - 12"></span></li>
-                        <li><button type="button"></button>
-                            <span>Set 3<div></div></span>
-                            <span>Reps: <input type="number" placeholder="10 - 12"></span></li>
-                        </ul>
-                    </li>
-                    <li class="exercise"><ul><li><span class="exercise-name">Dead hangs</span></li>
-                        <li><span class="notes">Myorep match sets</span></li>
-                        <li><button type="button"></button>
-                            <span>Set 1<div></div></span>
-                            <span>Time: <input type="number" placeholder="100s"></span></li>
-                        <li><button type="button"></button>
-                            <span>Set 2<div></div></span>
-                            <span>Time: <input type="number" placeholder="100s"></span></li>
-                        <li><button type="button"></button>
-                            <span>Set 3<div></div></span>
-                            <span>Time: <input type="number" placeholder="100s"></span></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
         </div>
         <nav class="nav-bottom">
             <ul>
@@ -141,8 +82,8 @@
                     </svg>
                     <span>Split</span>
                 </a></li>
-                <li><a href="index.html" class="active">
-                    <svg class="icon active" width="110%" height="110%" viewBox="0 0 70 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.87791;">
+                <li><a href="index.html">
+                    <svg class="icon" width="110%" height="110%" viewBox="0 0 70 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.87791;">
                         <g id="Layer3" transform="matrix(1.32299,0,0,1.32299,-11.3048,-10.7524)">
                             <path d="M25.119,40.883C24.091,39.161 23.5,37.149 23.5,35C23.5,33.089 23.967,31.287 24.793,29.701C26.71,26.018 30.563,23.5 35,23.5C41.347,23.5 46.5,28.653 46.5,35C46.5,37.149 45.909,39.161 44.881,40.883M16.716,40.883L25.119,40.883M25.119,40.883L44.881,40.883M44.881,40.883L53.284,40.883M21.5,45.92L48.5,45.92M26,51.211L44,51.211M35,23.276L35,16.165M42.415,25.582L46.285,20.97M27.292,25.582L23.422,20.97M46.285,32.779L52.424,31.696M23.422,32.727L17.576,31.696" style="fill:none;stroke-width:3.02px;"/>
                         </g>
@@ -157,8 +98,8 @@
                     </svg>
                     <span>Stats</span>
                 </a></li>
-                <li><a href="profile.html">
-                    <svg class="icon" width="100%" height="100%" viewBox="0 0 65 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.87791;">
+                <li><a href="profile.html" class="active">
+                    <svg class="icon active" width="100%" height="100%" viewBox="0 0 65 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.87791;">
                         <g id="Layer5">
                             <path d="M28.508,24.358L28.508,45.504L20.257,45.504L20.257,24.358L28.508,24.358ZM41.492,24.496L41.492,45.642L49.743,45.642L49.743,24.496L41.492,24.496ZM20.257,30.021L20.257,39.673L14.778,39.673L14.778,30.021L20.257,30.021ZM49.743,30.158L49.743,39.811L55.222,39.811L55.222,30.158L49.743,30.158ZM41.492,31.05L41.492,38.644L28.508,38.644L28.508,31.05L41.492,31.05Z" style="fill:none;;stroke-width:4px;"/>
                         </g>
