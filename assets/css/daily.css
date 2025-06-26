@@ -47,15 +47,20 @@
     font-size: var(--caption);
     text-align: center;
 
-    border:none;
+    border: 2px solid var(--nav-bar-color);
     border-radius: var(--xs-padding);
     
     color: var(--sub-text-color);
     background-color: var(--nav-bg-color);
 }
 .exercise input:not(:placeholder-shown){
-    background-color: var(--highlight-color);
+    background-color: var(--sub-text-color);
     color: var(--screen-color);
+}
+.exercise input:focus{
+    outline: none;
+    border-color: var(--sub-text-color);
+    box-shadow: 0 0 0 2px var(--sub-text-color);
 }
 .exercise button{
     height: var(--check-height-width);
