@@ -29,7 +29,7 @@
     transition: all 0.3s;
 }
 .exercise-list li:last-child{
-    margin: var(--xs-padding) 0 var(--sm-padding) 0;
+    margin: var(--xs-padding) 0 var(--m-padding) 0;
 }
 .exercise-list li span{
     display: flex;

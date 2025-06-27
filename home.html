@@ -5,17 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/nav.css">
+    <style>
+        .home-workout{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 340px;
+            width: 100%;
+            background-color: var(--nav-bg-color);
+            border-radius: var(--m-padding) var(--m-padding) 0 0;
+            padding-bottom: var(--xs-padding);
+        }
+        .home-workout p[id="date"]{
+            position: absolute;
+            top: 16px;
+            left: 60px;
+            color: var(--sub-text-color);
+            font-weight: bold;
+            font-size: var(--caption);
+        }
+        .home-workout ul{
+            list-style: none;
+            margin: 0 var(--m-padding) 0 var(--m-padding);
+            padding: 0;
+        }
+        .home-workout li{
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+        }
+        .home-workout h3{
+            margin-top: var(--m-padding);
+            margin-right: auto;
+            margin-left: var(--l-padding);
+            margin-bottom: 0;
+
+            color: var(--main-text-color);
+            font-size: var(--small-headline);
+        }
+        .home-workout a{
+            width: 100%;
+            text-align: center;
+            margin-top: var(--sm-padding);
+            margin-bottom: var(--m-padding);
+        }
+        .home-workout h1{
+            color: var(--highlight-2-color);
+            font-weight: bold;
+        }
+        .home-workout h1:hover{
+            color: var(--highlight-color);
+        }
+        .home-workout button{
+            margin: 0 var(--sm-padding) 0 var(--sm-padding);
+            background-color: var(--nav-bg-color);
+        }
+        .home-workout button + button{
+            margin-right: var(--m-padding);
+        }
+        .home-workout .icon{
+            stroke: var(--sub-text-color);
+        }
+        .home-workout div{
+            width: 80%;
+            background-color: var(--screen-color);
+            padding: var(--sm-padding) 0;
+            border-radius: 20px;
+        }
+        .home-exercises{
+            height: 140px;
+            width: 90%;
+            margin-top: var(--m-padding);
+            overflow-y: scroll;
+        }
+        .home-exercises li{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: left;
+            margin-left: var(--sm-padding);
+            padding: 0;
+            font-weight: bold;
+        }
+        .home-exercises em{
+            font-size: var(--small-headline);
+            font-style: normal;
+            font-weight: bold;
+            width: 30%;
+        }
+        .home-exercises pre{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: var(--caption);
+            font-weight: normal;
+            margin-left: auto;
+            margin-right: var(--m-padding);
+        }
+    </style>
     <script src="assets/js/script.js"></script>
     <title>Home</title>
 </head>
 <body>
     <div class="app-container">
-        <nav class="nav-top">
-            <ul>
-                <li><p id="version"></p>
-                    <p id="date"></p></li>
-                <li><ul class="nav-top-buttons">
-                    <li><button title="Skip/Reorder Workout">
+        <div class="home-workout">
+            <header>
+                <ul><li><p id="date"></p></li>
+                    <li><h3>Today's workout:</h3>
+                    <button title="Skip/Reorder Workout">
                         <svg class="icon" width="100%" height="100%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:3.02326;">
                         <g id="Layer1" transform="matrix(0.946837,0,0,0.946926,2.27594,4.79247)">
                             <g transform="matrix(1.08299,-0.128242,0.128051,1.08138,-8.02645,-1.65132)">
@@ -36,24 +131,26 @@
                             </g>
                         </g>
                     </svg>
-                    </button></li>
-                    <li><button title="Settings">
-                        <svg class="icon" width="100%" height="100%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;">
-                            <g transform="matrix(1.2647,-0.246306,0.246306,1.2647,-30.068,-9.42522)">
-                                <g id="Layer9">
-                                    <path d="M45.81,26.241L46.5,29.972C48.157,30.426 49.715,31.198 51.092,32.248L54.356,30.477C55.76,31.775 56.944,33.303 57.86,35.001L55.457,37.882C56.145,39.499 56.53,41.234 56.591,42.997L59.971,44.52C59.861,46.459 59.438,48.365 58.721,50.161L55.033,50.023C54.235,51.585 53.157,52.976 51.856,54.125L52.806,57.795C51.265,58.915 49.554,59.763 47.743,60.305L45.548,57.252C43.865,57.583 42.135,57.583 40.452,57.252L38.257,60.305C36.446,59.763 34.735,58.915 33.194,57.795L34.144,54.125C32.843,52.976 31.765,51.585 30.967,50.023L27.279,50.161C26.562,48.365 26.139,46.459 26.029,44.52L29.409,42.997C29.47,41.234 29.855,39.499 30.543,37.882L28.14,35.001C29.056,33.303 30.24,31.775 31.644,30.477L34.908,32.248C36.285,31.198 37.843,30.426 39.5,29.972L40.19,26.241C42.05,25.92 43.95,25.92 45.81,26.241ZM43,37.375C46.284,37.375 48.95,40.12 48.95,43.5C48.95,46.88 46.284,49.625 43,49.625C39.716,49.625 37.05,46.88 37.05,43.5C37.05,40.12 39.716,37.375 43,37.375Z" style="fill:none;stroke-width:4px;"/>
+                    </button>
+                    <button title="Edit">
+                        <svg class="icon" width="100%" height="100%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.87791;">
+                                <g transform="matrix(1.23083,-1.11022e-16,1.11022e-16,1.23083,-7.535,-7.84819)">
+                                    <g id="Layer6">
+                                        <path d="M18.191,15.72L41.404,34.242L36.5,40.388L13.286,21.866L18.191,15.72ZM36.535,40.388L43.901,41.312L41.404,34.29M18.461,25.995L23.365,19.849M52,52.28L21.221,52.28M21.152,36.844L21.221,52.28M52,52.28L52,15.72L30.089,15.72" style="fill:none;stroke-width:4px;"/>
+                                    </g>
                                 </g>
-                            </g>
-                            <g id="Layer10">
-                            </g>
-                        </svg>
-                    </button></li>
-                </ul></li>
-            </ul>
-        </nav>
-        <div class="main">
-            <header>
-                <h1>Home</h1>
+                                <g id="Layer10">
+                                </g>
+                            </svg>
+                        </button></li>
+                <li><a href="index.html"><h1>Push (Strength)</h1></a></li>
+                <li><div><ul class="home-exercises">
+                    <li><p><em>Ring Dips</em></p><pre> Sets: 4    Reps: 10 - 12   Weight: 12kg</pre></li>
+                    <li><p><em>Ring Pushups</em></p><pre> Sets: 3    Reps: 10 - 12</pre></li>
+                    <li><p><em>Dead hangs (Single Arm)</em></p><pre> Sets: 4     Time: 30 - 120s</pre></li>
+                    <li><p><em>Lateral Raises</em></p><pre> Sets: 4     Time: 12 - 14   Weight: 8kg</pre></li>
+                </ul></div></li>
+                </ul>
             </header>
         </div>
         <nav class="nav-bottom">
