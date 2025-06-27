@@ -47,6 +47,9 @@ button, a{
     font-size: var(--caption);
     text-decoration: none;
 
+    outline: none;
+    border: none;
+
     color: var(--main-text-color);
 
     cursor: pointer;

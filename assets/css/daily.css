@@ -62,7 +62,7 @@
     border-color: var(--sub-text-color);
     box-shadow: 0 0 0 2px var(--sub-text-color);
 }
-.exercise button{
+.exercise button[type="submit"]{
     height: var(--check-height-width);
     width: var(--check-height-width);
     margin: 0 var(--xs-padding) 0 0;
@@ -72,8 +72,16 @@
 
     background-color: var(--nav-bg-color);
 }
-.exercise button:hover{
+.exercise button[type="submit"]:hover{
     background-color: var(--highlight-color);
+}
+button[title="Edit"]{
+    margin-left: auto;
+    margin-right: var(--sm-padding);
+}
+button[title="Edit"] .icon{
+    max-width: 28px;
+    max-height: 28px;
 }
 .exercise .checked-set{
     padding-bottom: 8px;
