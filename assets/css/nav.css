@@ -30,6 +30,9 @@ nav ul{
     background-color: var(--nav-bg-color);
 
     border-radius: 0 0 var(--m-padding) var(--m-padding);
+    border-style: solid;
+    border-width: var(--border-width) 0px 0px 0px;
+    border-color: var(--nav-bg-color);
 
     position: absolute;
 }
@@ -120,6 +123,7 @@ button:hover:not(.active) .icon path, a:hover:not(.active) .icon path{
     stroke: var(--highlight-color);
 }
 .active{
+    border-color: var(--highlight-2-color) !important;
     color: var(--highlight-2-color);
     stroke: var(--highlight-2-color) !important;
 }

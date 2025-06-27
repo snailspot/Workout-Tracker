@@ -28,6 +28,18 @@ input[type=number]::-webkit-outer-spin-button {
     --check-mark: 20px;
     --border-width: 3px;
     /* Light mode colors */
+    --bg-color: #cacaca;
+    --screen-color: #242423;
+    --nav-bg-color: #2d2f2f ;
+    --main-text-color: #cfccc5;
+    --sub-text-color: #9b9995;
+    --scroll-bar-color: #424240;
+    --highlight-color: #eead6c;
+    --highlight-2-color: #d1854e;
+    --highlight-3-color: #d9bc99;
+    
+}
+.root[data-theme="light"]{
     --bg-color: #838383;
     --screen-color: #f1f0ef;
     --nav-bg-color: #dde3e4;
@@ -37,7 +49,6 @@ input[type=number]::-webkit-outer-spin-button {
     --highlight-color: #eead6c;
     --highlight-2-color: #d57d3e;
     --highlight-3-color: #d9bc99;
-    
 }
 .app-container{
     display: flex;

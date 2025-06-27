@@ -78,6 +78,8 @@
 button[title="Edit"]{
     margin-left: auto;
     margin-right: var(--sm-padding);
+
+    background-color: var(--screen-color);
 }
 button[title="Edit"] .icon{
     max-width: 28px;
