@@ -27,10 +27,10 @@ input[type=number]::-webkit-outer-spin-button {
     --sub-heading: 24px;
     --check-mark: 20px;
     --border-width: 3px;
-    /* Light mode colors */
-    --bg-color: #cacaca;
+    /* Dark mode colors */
+    --bg-color: #ffffff;
     --screen-color: #242423;
-    --nav-bg-color: #2d2f2f ;
+    --nav-bg-color: #343939 ;
     --main-text-color: #cfccc5;
     --sub-text-color: #9b9995;
     --scroll-bar-color: #424240;

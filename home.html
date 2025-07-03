@@ -66,7 +66,7 @@
         .home-workout .icon{
             stroke: var(--sub-text-color);
         }
-        .home-workout div{
+        .home-workout div:not(.week-summary){
             width: 80%;
             background-color: var(--screen-color);
             padding: var(--sm-padding) 0;
@@ -84,7 +84,8 @@
             align-items: center;
             justify-content: left;
             margin-left: var(--sm-padding);
-            padding: 0;
+            margin-bottom: calc(-1 * var(--sm-padding));
+            margin-top: -8px;
             font-weight: bold;
         }
         .home-exercises em{
@@ -100,14 +101,71 @@
             margin-left: auto;
             margin-right: var(--m-padding);
         }
+        .week-summary{
+            width: 100%; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: -20px;
+            margin-top: var(--sm-padding);
+
+            text-align: center;
+        }
+        .week-summary ul{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: var(--m-padding);
+            list-style: none;
+        }
+        .week-summary li{
+            display: flex;
+            flex-direction: column;
+            gap: var(--xs-padding);
+
+            font-weight: bold;
+        }
+        .week-summary em{
+            font-size: var(--small-headline);
+            font-style: normal;
+        }
+        .week-summary p{
+            margin-top: calc(-1 * var(--sm-padding));
+            font-size: var(--caption);
+        }
+        .progress-container{
+            width: 48px;
+            height: 64px;
+            margin-bottom: var(--m-padding);
+            position: relative;
+            overflow: hidden;
+
+            border-radius: var(--sm-padding);
+            background-color: var(--nav-bg-color);
+        }
+        .progress-bar{
+            height: 0;
+            width: 64px;
+            position: absolute;
+            bottom: 0;
+
+            background-color: var(--highlight-2-color);
+        }
+        .rest-day{
+            height: 100%;
+            width: 100%;
+
+            background-color: var(--scroll-bar-color);
+        }
     </style>
     <script src="assets/js/script.js"></script>
     <title>Home</title>
 </head>
 <body>
     <div class="app-container">
-        <div class="home-workout">
-            <header>
+        <div style="width: 100%;">
+            <header class="home-workout">
                 <ul><li><p id="date"></p></li>
                     <li><h3>Today's workout:</h3>
                     <button title="Skip/Reorder Workout">
@@ -152,6 +210,18 @@
                 </ul></div></li>
                 </ul>
             </header>
+            <div class="week-summary">
+                <h3>Your week so far: </h3>
+                <ul>
+                    <li><div class="progress-container"><div class="rest-day"></div></div><p><em>Mon</em></p><p>10/05</p></li>
+                    <li><div class="progress-container"><div class="progress-bar" style="height: 1000%;"></div></div><p><em>Tue</em></p><p>11/05</p></li>
+                    <li><div class="progress-container"><div class="progress-bar" style="height: 100%;"></div></div><p><em>Wed</em></p><p>12/05</p></li>
+                    <li><div class="progress-container"><div class="progress-bar" style="height: 80%;"></div></div><p><em>Thu</em></p><p>13/05</p></li>
+                    <li><div class="progress-container"><div class="rest-day"></div></div><p><em>Fri</em></p><p>14/05</p></li>
+                    <li><div class="progress-container"><div class="progress-bar" style="height: 100%;"></div></div><p><em>Sat</em></p><p>15/05</p></li>
+                    <li><div class="progress-container"><div class="progress-bar" style="height: 80%;"></div></div><p><em>Sun</em></p><p>16/05</p></li>
+                </ul>
+            </div>
         </div>
         <nav class="nav-bottom">
             <ul>
