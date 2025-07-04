@@ -1,0 +1,132 @@
+.edit-form{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+}
+.edit-form li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: var(--xs-padding) 0;
+    position: relative;
+}
+.edit-form li ul{
+    margin-top: -20px;
+    padding: 0;
+}
+.edit-form li ul li:first-child{
+    padding-top: var(--sm-padding);
+    border-top: 3px solid var(--highlight-2-color);
+}
+.edit-form input, .edit-form select, .split-name-form{
+    margin: 0 var(--sm-padding);
+    z-index: 1;
+
+    font-size: var(--caption);
+    text-align: center;
+    font-weight: bold;
+
+    background-color: var(--second-div-color);
+    color: var(--main-text-color);
+
+    border-radius: var(--sm-padding);
+    border: none;
+}
+.edit-form input{
+    padding: var(--xs-padding);
+    height: var(--sm-padding);
+}
+.edit-form select{
+    padding-left: var(--xs-padding);
+    height: 30px;
+}
+.edit-form input:focus, .edit-form select:focus, .split-name-form:focus{
+    border: none;
+    outline: none;
+
+    box-shadow: 0 0 0 2px var(--sub-text-color);
+}
+.edit-form input[type="number"]{
+    width: 40px;
+    margin: 0 8px 0 0;
+}
+.edit-form input:not(:placeholder-shown), .split-name-form:not(:placeholder-shown){
+    background-color: var(--sub-text-color);
+    color: var(--screen-color);
+}
+.split-name-form{
+    margin: var(--sm-padding) 0 var(--m-padding) 0;
+    width: 80%;
+    padding: var(--sm-padding) 0;
+    height: var(--l-padding);
+
+    border-radius: var(--m-padding);
+
+    font-size: var(--hero-headline);
+}
+.edit-form input[placeholder="Notes"]{
+    width: 366px;
+    margin-top: var(--sm-padding);
+}
+.edit-form input[placeholder="Search Exercise"]{
+    width: 212px;
+}
+.edit-form button[type="submit"]{
+    height: var(--check-height-width);
+    width: var(--check-height-width);
+    margin: 0 var(--xs-padding) 0 0;
+
+    border: 0px;
+    border-radius: var(--xs-padding);
+
+    background-color: var(--second-div-color);
+}
+.edit-form button[type="submit"]:hover{
+    background-color: var(--highlight-color);
+}
+.edit-form span{
+    margin-right: var(--xs-padding);
+    font-size: var(--caption);
+    font-weight: bold;
+}
+.edit-form .line{
+    height: 20px;
+    width: 3px;
+    margin-left: var(--xs-padding);
+    margin-right: var(--m-padding);
+    background-color: var(--highlight-2-color);
+}
+.add-icon{
+    margin-left: calc(-1 * var(--sm-padding));
+
+    background-color: var(--screen-color);
+    transition: all 0.3s;
+    z-index: 0;
+}
+.add-icon svg{
+    stroke: var(--main-text-color);
+    transition: 0.3s;
+}
+.add-icon svg:hover{
+    stroke: var(--highlight-color);
+}
+.workout-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+    right: -30px;
+    margin-left: var(--m-padding);
+}
+.edit-form h3{
+    right: 324px;
+    text-align: right;
+    position: absolute;
+}

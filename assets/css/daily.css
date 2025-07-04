@@ -51,7 +51,7 @@
     border-radius: var(--xs-padding);
     
     color: var(--sub-text-color);
-    background-color: var(--nav-bg-color);
+    background-color: var(--second-div-color);
 }
 .exercise input:not(:placeholder-shown){
     background-color: var(--sub-text-color);
@@ -70,7 +70,7 @@
     border: 0px;
     border-radius: var(--xs-padding);
 
-    background-color: var(--nav-bg-color);
+    background-color: var(--second-div-color);
 }
 .exercise button[type="submit"]:hover{
     background-color: var(--highlight-color);
@@ -122,6 +122,5 @@ button[title="Edit"] .icon{
 
     border-radius: var(--sm-padding);
 
-    background-color: var(--nav-bg-color);
-    color: var(--sub-text-color);
+    background-color: var(--second-div-color);
 }
