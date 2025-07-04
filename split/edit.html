@@ -7,7 +7,25 @@
     <link rel="stylesheet" href="../../assets/css/nav.css">
     <link rel="stylesheet" href="../../assets/css/edit.css">
     <script src="../assets/js/script.js"></script>
-    <title>Split</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const buttons = document.querySelectorAll(".edit-form li button[type='submit']");
+            buttons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    button.classList.toggle("checked-set");
+                    button.innerHTML = button.classList.contains("checked-set") ? '\u2713' : "";
+
+                    const workoutName = button.parentElement.querySelector("input");
+                    const addBtn = button.parentElement.querySelector(".add-icon");
+                    workoutName.classList.toggle("rest-day");
+                    workoutName.value = "";
+                    addBtn.classList.toggle("hide-btn");
+                });
+            });
+        });
+    </script>
+    <title>Edit Split</title>
 </head>
 <body>
     <div class="app-container">

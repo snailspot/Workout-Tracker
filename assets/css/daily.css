@@ -52,6 +52,8 @@
     
     color: var(--sub-text-color);
     background-color: var(--second-div-color);
+
+    transition: all 0.3s;
 }
 .exercise input:not(:placeholder-shown){
     background-color: var(--sub-text-color);
@@ -84,14 +86,6 @@ button[title="Edit"]{
 button[title="Edit"] .icon{
     max-width: 28px;
     max-height: 28px;
-}
-.exercise .checked-set{
-    padding-bottom: 8px;
-    padding-left: 8px;
-
-    font-size: var(--check-mark);
-
-    background-color: var(--highlight-color);
 }
 .exercise-list li button:hover{
     color: var(--main-text-color);

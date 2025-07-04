@@ -6,7 +6,7 @@
     justify-content: center;
     margin: 0 auto;
     padding: 0;
-    width: 80%;
+    width: 90%;
 }
 .edit-form li{
     display: flex;
@@ -24,6 +24,9 @@
     padding-top: var(--sm-padding);
     border-top: 3px solid var(--highlight-2-color);
 }
+.edit-form li ul li:last-child{
+    padding-bottom: var(--sm-padding);
+}
 .edit-form input, .edit-form select, .split-name-form{
     margin: 0 var(--sm-padding);
     z-index: 1;
@@ -37,6 +40,8 @@
 
     border-radius: var(--sm-padding);
     border: none;
+
+    transition: all 0.3s;
 }
 .edit-form input{
     padding: var(--xs-padding);
@@ -129,4 +134,19 @@
     right: 324px;
     text-align: right;
     position: absolute;
+}
+.rest-day{
+    background-color: var(--scroll-bar-color) !important;
+
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.hide-btn{
+    pointer-events: none;
+}
+.hide-btn svg{
+    stroke: var(--scroll-bar-color) !important;
 }
