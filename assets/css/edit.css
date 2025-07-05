@@ -107,21 +107,25 @@
     margin-right: var(--m-padding);
     background-color: var(--highlight-2-color);
 }
-.add-icon{
+.add-btn, .del-btn{
     margin-left: calc(-1 * var(--sm-padding));
 
     background-color: var(--screen-color);
     transition: all 0.3s;
     z-index: 0;
 }
-.add-icon svg{
+.del-btn{
+    position: absolute;
+    right: -36px;
+}
+.add-btn svg, .del-btn svg{
     stroke: var(--main-text-color);
     transition: 0.3s;
 }
-.add-icon svg:hover{
+.add-btn svg:hover, .del-btn svg:hover{
     stroke: var(--highlight-color);
 }
-.workout-container{
+.edit-workout-cont{
     display: flex;
     align-items: center;
     justify-content: center;
