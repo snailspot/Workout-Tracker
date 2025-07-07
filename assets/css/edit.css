@@ -19,6 +19,7 @@
 .edit-form li ul{
     margin-top: -20px;
     padding: 0;
+    transition: 0.2s;
 }
 .edit-form li ul li:first-child{
     padding-top: var(--sm-padding);
@@ -50,6 +51,7 @@
 .edit-form select{
     padding-left: var(--xs-padding);
     height: 30px;
+    text-align: left;
 }
 .edit-form input:focus, .edit-form select:focus, .split-name-form:focus{
     border: none;
@@ -107,22 +109,25 @@
     margin-right: var(--m-padding);
     background-color: var(--highlight-2-color);
 }
-.add-btn, .del-btn{
+.add-btn, .del-btn, .col-btn{
     margin-left: calc(-1 * var(--sm-padding));
 
     background-color: var(--screen-color);
     transition: all 0.3s;
     z-index: 0;
 }
-.del-btn{
+.del-btn, .col-btn{
     position: absolute;
-    right: -36px;
+    right: -40px;
 }
-.add-btn svg, .del-btn svg{
+.col-btn svg{
+    rotate: 90deg;
+}
+.add-btn svg, .del-btn svg, .col-btn svg{
     stroke: var(--main-text-color);
     transition: 0.3s;
 }
-.add-btn svg:hover, .del-btn svg:hover{
+.add-btn svg:hover, .del-btn svg:hover, .col-btn svg:hover{
     stroke: var(--highlight-color);
 }
 .edit-workout-cont{

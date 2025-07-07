@@ -12,30 +12,22 @@
             const restBtn = document.querySelectorAll(".edit-form li button[type='submit']");
             const addExerciseBtn = document.querySelectorAll(".edit-form li button[title='Add exercise']");
             const delExerciseBtn = document.querySelectorAll(".edit-form li button[title='Remove exercise']");
+            const colBtn = document.querySelectorAll(".edit-form li button[title='Collapse workout']");
 
-            restBtn.forEach(button => {
-                button.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    toggleRest(button);
-                });
-            });
-            addExerciseBtn.forEach(button => {
-                button.addEventListener('click', () => {
-                    addExercise(button);
-                });
-            });
-            delExerciseBtn.forEach(button => {
-                button.addEventListener('click', () => {
-                    console.log(button);
-                    button.parentElement.parentElement.parentElement.remove();
-                });
-            });
+            restBtn.forEach(button => { button.addEventListener('click', (event) => { event.preventDefault();toggleRest(button);});});
+
+            addExerciseBtn.forEach(button => { button.addEventListener('click', () => {addExercise(button);});});
+
+            delExerciseBtn.forEach(button => { button.addEventListener('click', () => { button.parentElement.parentElement.parentElement.remove();});});
+
+            colBtn.forEach(button => { button.addEventListener('click', () => { collapseWorkout(button);});});
         });
 
         function toggleRest(button){
             const workoutName = button.parentElement.querySelector("input");
             const addBtn = button.parentElement.querySelector(".add-btn");
-            const exercise = button.parentElement.parentElement.parentElement.querySelectorAll(".edit-exercise-cont");
+            const colBtn = button.parentElement.querySelector(".col-btn");
+            const exercise = button.parentElement.parentElement.parentElement.querySelectorAll("li:not(:first-child) ul");
             button.classList.toggle("checked-set");
             button.innerHTML = button.classList.contains("checked-set") ? '\u2713' : "";
             
@@ -44,12 +36,32 @@
             addBtn.classList.toggle("hide-btn");
 
             if (workoutName.classList.contains("rest-day")){
-                exercise.forEach(exercise => {exercise.style.display = "none";});
+                colBtn.style.opacity = "0"
+                toggleExerciseDisplay(exercise);
             }else{
-                exercise.forEach(exercise => {exercise.style.display = "inline";});
+                colBtn.style.opacity = "100%"
+                toggleExerciseDisplay(exercise, false);
             }
         }
 
+        function collapseWorkout(button){
+            const exerciseList = button.parentElement.parentElement.parentElement.querySelectorAll('li:not(:first-child) ul');
+                if (exerciseList[0].style.display === "none"){
+                    toggleExerciseDisplay(exerciseList, false);
+                    button.style.rotate = "30deg";
+                }else{
+                    toggleExerciseDisplay(exerciseList)
+                    button.style.rotate = "90deg";
+                }
+        }
+
+        function toggleExerciseDisplay(exerciseList, condition=true){
+            if(condition && exerciseList.length >= 1){
+                exerciseList.forEach(exercise => {exercise.style.opacity = "0"; setTimeout(() =>{exercise.style.display = "none";}, 200); });
+            }else{
+                exerciseList.forEach(exercise => {exercise.style.opacity = "100%"; exercise.style.display = "inline";});
+            }
+        }
         function addExercise(button){
             const mainList = button.parentElement.parentElement.parentElement;
             const parentLi = document.createElement('li');
@@ -125,6 +137,11 @@
                                 </g>
                             </svg>
                         </button>
+                        <button class="col-btn" title="Collapse workout"><svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;">
+                                <g id="Layer10">
+                                    <path d="M13.5,35.5L56.5,35.5" style="fill:none;stroke-width:6px;"/>
+                                </g>
+                            </svg></button>
                     </div></li>
                 <li><ul>
                     <li><input type="text" placeholder="Search Exercise"><button class="add-btn" title="New exercise">
@@ -176,6 +193,11 @@
                                 </g>
                             </svg>
                         </button>
+                        <button class="col-btn" title="Collapse workout"><svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;">
+                                <g id="Layer10">
+                                    <path d="M13.5,35.5L56.5,35.5" style="fill:none;stroke-width:6px;"/>
+                                </g>
+                            </svg></button>
                     </div></li>
             </ul><ul class="edit-form">
                 <li><h3>Wed</h3>
