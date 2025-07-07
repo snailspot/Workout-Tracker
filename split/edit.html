@@ -10,11 +10,24 @@
     <script>
         document.addEventListener('DOMContentLoaded', function(){
             const restBtn = document.querySelectorAll(".edit-form li button[type='submit']");
-            const addExerciseBtn = document.querySelectorAll(".edit-form li button[]");
+            const addExerciseBtn = document.querySelectorAll(".edit-form li button[title='Add exercise']");
+            const delExerciseBtn = document.querySelectorAll(".edit-form li button[title='Remove exercise']");
+
             restBtn.forEach(button => {
                 button.addEventListener('click', (event) => {
                     event.preventDefault();
                     toggleRest(button);
+                });
+            });
+            addExerciseBtn.forEach(button => {
+                button.addEventListener('click', () => {
+                    addExercise(button);
+                });
+            });
+            delExerciseBtn.forEach(button => {
+                button.addEventListener('click', () => {
+                    console.log(button);
+                    button.parentElement.parentElement.parentElement.remove();
                 });
             });
         });
@@ -35,6 +48,31 @@
             }else{
                 exercise.forEach(exercise => {exercise.style.display = "inline";});
             }
+        }
+
+        function addExercise(button){
+            const mainList = button.parentElement.parentElement.parentElement;
+            const parentLi = document.createElement('li');
+            const exerciseUl = document.createElement('ul');
+            const firstRow = document.createElement('li');
+            const secondRow = document.createElement('li');
+            const thirdRow = document.createElement('li');
+
+            const addButton = '<button class="add-btn" title="New exercise"><svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;"><g id="Layer10"><path d="M13.5,35.5L56.5,35.5M35,57L35,14" style="fill:none;stroke-width:6px;"/></g></svg></button>'
+            const delButton = '<button class="del-btn" title="Remove exercise"><svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;"><g id="Layer13" transform="matrix(1,0,0,1,1.42109e-14,-0.905512)"><path d="M50.685,24.5L47.5,57.5L22.5,57.5L19.315,24.5M13,24.5L19.315,24.5M50.685,24.5L57,24.5M19.315,24.5L27,24.5M27,24.5L43,24.5M43,24.5L50.685,24.5M27,24.5L27,17.679C27,15.596 28.691,13.906 30.774,13.906L39.226,13.906C41.309,13.906 43,15.596 43,17.679L43,24.5" style="fill:none;stroke-width:6px;"/><g transform="matrix(0.996195,-0.0871557,0.0871557,0.996195,-8.63745,2.73691)"><path d="M35,32L35,49" style="fill:none;stroke-width:4px;"/></g><g transform="matrix(0.996195,0.0871557,-0.0871557,0.996195,8.90382,-3.36399)"><path d="M35,32L35,49" style="fill:none;stroke-width:4px;"/></g></g></svg></button>'
+
+            firstRow.innerHTML = '<input type="text" placeholder="Search Exercise"><button class="add-btn" title="New exercise">' + addButton + '<select><option>Weighted</option><option>Bodyweight</option><option>Assisted</option></select>' + delButton;
+            secondRow.innerHTML = '<input type="number" placeholder="Sets"><div class="line"></div><span>Rep Scheme</span><select><option>Reps</option><option>Time</option></select><input type="number" placeholder="Min"><input type="number" placeholder="Max">'
+            thirdRow.innerHTML = '<input type="text" placeholder="Notes">'
+
+            firstRow.querySelector("button[title='Remove exercise']").addEventListener('click', function() {
+                this.parentElement.parentElement.parentElement.remove();
+            });
+            exerciseUl.appendChild(firstRow);
+            exerciseUl.appendChild(secondRow);
+            exerciseUl.appendChild(thirdRow);
+            parentLi.appendChild(exerciseUl);
+            mainList.appendChild(parentLi);
         }
     </script>
     <title>Edit Split</title>
@@ -88,7 +126,7 @@
                             </svg>
                         </button>
                     </div></li>
-                <li class="edit-exercise-cont"><ul>
+                <li><ul>
                     <li><input type="text" placeholder="Search Exercise"><button class="add-btn" title="New exercise">
                             <svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;">
                                 <g id="Layer10">
@@ -126,6 +164,7 @@
                         </li>
                         <li><input type="text" placeholder="Notes"></li>
                 </ul></li>
+            </ul><ul class="edit-form">
                 <li><h3>Tue</h3>
                     <div class="edit-workout-cont">
                         <span>Rest Day</span><button type="submit"></button>
@@ -138,6 +177,7 @@
                             </svg>
                         </button>
                     </div></li>
+            </ul><ul class="edit-form">
                 <li><h3>Wed</h3>
                     <div class="edit-workout-cont">
                         <span>Rest Day</span><button type="submit"></button>
@@ -150,6 +190,7 @@
                             </svg>
                         </button>
                     </div></li>
+            </ul><ul class="edit-form">
                 <li><h3>Thu</h3>
                     <div class="edit-workout-cont">
                         <span>Rest Day</span><button type="submit"></button>
@@ -162,6 +203,7 @@
                             </svg>
                         </button>
                     </div></li>
+            </ul><ul class="edit-form">
                 <li><h3>Fri</h3>
                     <div class="edit-workout-cont">
                         <span>Rest Day</span><button type="submit"></button>
@@ -174,6 +216,7 @@
                             </svg>
                         </button>
                     </div></li>
+            </ul><ul class="edit-form">
                 <li><h3>Sat</h3>
                     <div class="edit-workout-cont">
                         <span>Rest Day</span><button type="submit"></button>
@@ -186,6 +229,7 @@
                             </svg>
                         </button>
                     </div></li>
+            </ul><ul class="edit-form">
                 <li><h3>Sun</h3>
                     <div class="edit-workout-cont">
                         <span>Rest Day</span><button type="submit"></button>
