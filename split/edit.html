@@ -37,29 +37,29 @@
 
             if (workoutName.classList.contains("rest-day")){
                 colBtn.style.opacity = "0"
-                toggleExerciseDisplay(exercise);
+                toggleExerciseDisplay(exercise, false);
             }else{
                 colBtn.style.opacity = "100%"
-                toggleExerciseDisplay(exercise, false);
+                toggleExerciseDisplay(exercise);
             }
         }
 
         function collapseWorkout(button){
             const exerciseList = button.parentElement.parentElement.parentElement.querySelectorAll('li:not(:first-child) ul');
-                if (exerciseList[0].style.display === "none"){
-                    toggleExerciseDisplay(exerciseList, false);
+                if (exerciseList[0].parentElement.style.display === "none"){
+                    toggleExerciseDisplay(exerciseList);
                     button.style.rotate = "30deg";
                 }else{
-                    toggleExerciseDisplay(exerciseList)
+                    toggleExerciseDisplay(exerciseList, false);
                     button.style.rotate = "90deg";
                 }
         }
 
         function toggleExerciseDisplay(exerciseList, condition=true){
             if(condition && exerciseList.length >= 1){
-                exerciseList.forEach(exercise => {exercise.style.opacity = "0"; setTimeout(() =>{exercise.style.display = "none";}, 200); });
+                exerciseList.forEach(exercise => {exercise.style.opacity = "100%"; exercise.parentElement.style.display = "inline";});
             }else{
-                exerciseList.forEach(exercise => {exercise.style.opacity = "100%"; exercise.style.display = "inline";});
+                exerciseList.forEach(exercise => {exercise.style.opacity = "0"; setTimeout(() =>{exercise.parentElement.style.display = "none"}, 200); });
             }
         }
         function addExercise(button){
@@ -85,6 +85,11 @@
             exerciseUl.appendChild(thirdRow);
             parentLi.appendChild(exerciseUl);
             mainList.appendChild(parentLi);
+
+            const exerciseList = button.parentElement.parentElement.parentElement.querySelectorAll('li:not(:first-child) ul');
+            const colBtn = button.parentElement.querySelector("button[title='Collapse workout']");
+            toggleExerciseDisplay(exerciseList);
+            colBtn.style.rotate = "30deg";
         }
     </script>
     <title>Edit Split</title>
