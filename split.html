@@ -5,7 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/daily.css">
     <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const fullDate = new Date();
+            const week = getCurrentWeek(fullDate);
+            document.getElementById("week").innerHTML = formatWeekDate(week[0]) + " - " + formatWeekDate(week[1]);
+            for (let i = 0; i < 7; i++){
+                const day = new Date(week[0]);
+                day.setDate(week[0].getDate() + i);
+                document.getElementById("day"+i).innerHTML = formatWeekDate(day);
+                console.log(document.getElementById("day"+i));
+            }
+        });
+        function getCurrentWeek(fullDate){
+            const today = fullDate.getDate();
+            const diffToMonday = fullDate.getDay() === 0 ? 6 : fullDate.getDay()-1;
+
+            const weekStart = new Date(fullDate);
+            weekStart.setDate(today - diffToMonday);
+
+            const weekEnd = new Date(weekStart);
+            weekEnd.setDate(weekStart.getDate() + 6);
+
+            const week = [weekStart, weekEnd]
+            return week;
+        }
+        function formatWeekDate(date){
+            return formatDateStr(date.getDate()) + "/" + formatDateStr(date.getMonth());        
+        }
+    </script>
     <title>Split</title>
 </head>
 <body>
@@ -63,8 +93,126 @@
         <div class="main">
             <header>
                 <h1>Powerbuilding</h1>
-                <h2>DD/MM - DD/MM</h2>
+                <h2 id="week">DD/MM - DD/MM</h2>
             </header>
+            <div class="list-container">
+                <ul class="exercise-list">
+                    <li class="exercise"><ul><li><span id="day0"></span><span class="exercise-name">Monday</span></li>
+                        <li><span class="notes">Last set drop set</span></li>
+                        <li><button type="submit"></button>
+                            <span>Set 1<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 2<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 3<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        </ul>
+                    </li>
+                    <li class="exercise"><ul><li><span id="day1"></span><span class="exercise-name">Tuesday</span></li>
+                        <li><span class="notes">Last set drop set</span></li>
+                        <li><button type="submit"></button>
+                            <span>Set 1<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 2<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 3<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        </ul>
+                    </li>
+                    <li class="exercise"><ul><li><span id="day2"></span><span class="exercise-name">Wednesday</span></li>
+                        <li><span class="notes">Last set drop set</span></li>
+                        <li><button type="submit"></button>
+                            <span>Set 1<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 2<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 3<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        </ul>
+                    </li>
+                    <li class="exercise"><ul><li><span id="day3"></span><span class="exercise-name">Thursday</span>
+                    <button title="Edit">
+                    </button></li>
+                        <li><span class="notes">Last set drop set</span></li>
+                        <li><button type="submit"></button>
+                            <span>Set 1<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 2<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 3<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        </ul>
+                    </li>
+                    <li class="exercise"><ul><li><span id="day4"></span><span class="exercise-name">Friday</span></li>
+                        <li><span class="notes">Last set drop set</span></li>
+                        <li><button type="submit"></button>
+                            <span>Set 1<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 2<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 3<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        </ul>
+                    </li>
+                    <li class="exercise"><ul><li><span id="day5"></span><span class="exercise-name">Saturday</span></li>
+                        <li><span class="notes">Last set drop set</span></li>
+                        <li><button type="submit"></button>
+                            <span>Set 1<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 2<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 3<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        </ul>
+                    </li>
+                    <li class="exercise"><ul><li><span id="day6"></span><span class="exercise-name">Sunday</span></li>
+                        <li><span class="notes">Last set drop set</span></li>
+                        <li><button type="submit"></button>
+                            <span>Set 1<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 2<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        <li><button type="submit"></button>
+                            <span>Set 3<div></div></span>
+                            <span>Reps: <input type="number" placeholder="10 - 12"></span>
+                            <span>Weight (kg): <input type="number" placeholder="22"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
         <nav class="nav-bottom">
             <ul>

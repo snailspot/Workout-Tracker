@@ -53,6 +53,18 @@
     height: 30px;
     text-align: left;
 }
+.edit-form select:focus{
+    outline: none;
+}
+.edit-form select option{
+    font-weight: bold;
+}
+.edit-form select option:checked{
+    background-color: var(--highlight-2-color);
+}
+.edit-form select option:hover{
+    background-color: var(--highlight-color) !important;
+}
 .edit-form input:focus, .edit-form select:focus, .split-name-form:focus{
     border: none;
     outline: none;
