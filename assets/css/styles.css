@@ -115,3 +115,23 @@ h2{
     margin-top: calc(-1 * var(--sm-padding));
 }
 
+/* Buttons */
+.col-btn{
+    margin-left: calc(-1 * var(--sm-padding));
+    position: absolute;
+    right: -40px;
+
+    background-color: var(--screen-color);
+    transition: all 0.3s;
+    z-index: 0;
+}
+.col-btn svg{
+    rotate: 90deg;
+}
+.col-btn svg{
+    stroke: var(--main-text-color);
+    transition: 0.3s;
+}
+.col-btn svg:hover{
+    stroke: var(--highlight-color);
+}

@@ -28,3 +28,11 @@ function formatHeaderDate(fullDate){
 function formatDateStr(date){
     return date < 10 ? "0" + date.toString() : date.toString();
 }
+
+function toggleExerciseDisplay(exerciseList, condition=true){
+    if(condition && exerciseList.length >= 1){
+        exerciseList.forEach(exercise => {exercise.style.opacity = "100%"; exercise.parentElement.style.display = "inline";});
+    }else{
+        exerciseList.forEach(exercise => {exercise.style.opacity = "0"; setTimeout(() =>{exercise.parentElement.style.display = "none"}, 200); });
+    }
+}

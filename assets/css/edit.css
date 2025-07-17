@@ -121,7 +121,7 @@
     margin-right: var(--m-padding);
     background-color: var(--highlight-2-color);
 }
-.add-btn, .del-btn, .col-btn{
+.add-btn, .del-btn{
     margin-left: calc(-1 * var(--sm-padding));
 
     background-color: var(--screen-color);
@@ -132,14 +132,11 @@
     position: absolute;
     right: -40px;
 }
-.col-btn svg{
-    rotate: 90deg;
-}
-.add-btn svg, .del-btn svg, .col-btn svg{
+.add-btn svg, .del-btn svg{
     stroke: var(--main-text-color);
     transition: 0.3s;
 }
-.add-btn svg:hover, .del-btn svg:hover, .col-btn svg:hover{
+.add-btn svg:hover, .del-btn svg:hover{
     stroke: var(--highlight-color);
 }
 .edit-workout-cont{

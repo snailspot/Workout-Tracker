@@ -19,6 +19,10 @@
                 day.setDate(week[0].getDate() + i);
                 document.getElementById("day"+i).innerHTML = formatWeekDate(day) + " " + daysOfWeek[i];
             }
+
+            const splitDays = document.querySelectorAll(".workout-name");
+            addCollapseButtons(splitDays);
+            
         });
         function getCurrentWeek(fullDate){
             const today = fullDate.getDate();
@@ -33,9 +37,36 @@
             const week = [weekStart, weekEnd]
             return week;
         }
+
         function formatWeekDate(date){
             return formatDateStr(date.getDate()) + "/" + formatDateStr(date.getMonth());        
         }
+
+        function addCollapseButtons(splitList){
+            const activeDays = Array.from(splitList).filter(el => el.innerHTML !== '<a>Rest day</a>');
+            const colBtnIcon = '<svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;"><g id="Layer10"><path d="M13.5,35.5L56.5,35.5" style="fill:none;stroke-width:6px;"/></g></svg>'
+
+            activeDays.forEach(el => {
+                const colBtn = document.createElement('button');
+                colBtn.innerHTML = colBtnIcon;
+                colBtn.classList.add("col-btn");
+                colBtn.setAttribute('title', 'Collapse workout');
+                colBtn.addEventListener('click', () => { collapseWorkout(colBtn);});
+                el.parentElement.appendChild(colBtn);
+            });
+        }
+
+        function collapseWorkout(button){
+            const workout = button.parentElement.parentElement.querySelectorAll(".exercise")
+            if (workout[0].parentElement.style.display === "none"){
+                toggleExerciseDisplay(workout);
+                button.style.rotate = "30deg";
+            }else{
+                toggleExerciseDisplay(workout, false);
+                button.style.rotate = "90deg";
+            }
+        }
+
     </script>
     <title>Split</title>
 </head>
