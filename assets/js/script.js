@@ -31,7 +31,7 @@ function formatDateStr(date){
 
 function toggleExerciseDisplay(exerciseList, condition=true, display="inline"){
     if(condition && exerciseList.length >= 1){
-        exerciseList.forEach(exercise => {exercise.style.opacity = "100%"; exercise.parentElement.style.display = display;});
+        exerciseList.forEach(exercise => {exercise.parentElement.style.display = display; setTimeout(() => {exercise.style.opacity = "100%", 300})});
     }else{
         exerciseList.forEach(exercise => {exercise.style.opacity = "0"; setTimeout(() =>{exercise.parentElement.style.display = "none"}, 200); });
     }
