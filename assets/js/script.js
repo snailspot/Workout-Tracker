@@ -29,10 +29,23 @@ function formatDateStr(date){
     return date < 10 ? "0" + date.toString() : date.toString();
 }
 
-function toggleExerciseDisplay(exerciseList, condition=true){
+function toggleExerciseDisplay(exerciseList, condition=true, display="inline"){
     if(condition && exerciseList.length >= 1){
-        exerciseList.forEach(exercise => {exercise.style.opacity = "100%"; exercise.parentElement.style.display = "inline";});
+        exerciseList.forEach(exercise => {exercise.style.opacity = "100%"; exercise.parentElement.style.display = display;});
     }else{
         exerciseList.forEach(exercise => {exercise.style.opacity = "0"; setTimeout(() =>{exercise.parentElement.style.display = "none"}, 200); });
     }
+}
+
+function getNthParent(element, n){
+    let parent = element;
+    for (let i = 0; i < n; i ++){
+        if (parent.parentElement){
+            parent = parent.parentElement;
+        } else {
+            console.log("Parent not found at " + n + " position");
+            return null;
+        }
+    }
+    return parent;
 }

@@ -18,9 +18,12 @@
 
             addExerciseBtn.forEach(button => { button.addEventListener('click', () => {addExercise(button);});});
 
-            delExerciseBtn.forEach(button => { button.addEventListener('click', () => { button.parentElement.parentElement.parentElement.remove();});});
+            delExerciseBtn.forEach(button => { button.addEventListener('click', () => { deleteExercise(button);});});
 
-            colBtn.forEach(button => { button.addEventListener('click', () => { collapseWorkout(button);});});
+            colBtn.forEach(button => { 
+                button.addEventListener('click', () => { collapseWorkout(button);});
+                if (! getNthParent(button, 3).querySelector("ul")){ button.style.display = "none";}
+            });
         });
 
         function toggleRest(button){
@@ -45,7 +48,7 @@
         }
 
         function collapseWorkout(button){
-            const exerciseList = button.parentElement.parentElement.parentElement.querySelectorAll('li:not(:first-child) ul');
+            const exerciseList = getNthParent(button, 3).querySelectorAll('li:not(:first-child) ul');
                 if (exerciseList[0].parentElement.style.display === "none"){
                     toggleExerciseDisplay(exerciseList);
                     button.style.rotate = "30deg";
@@ -55,6 +58,13 @@
                 }
         }
 
+        function deleteExercise(button){
+            if (getNthParent(button, 4).querySelectorAll("ul").length === 1) {
+                getNthParent(button, 4).querySelector(".col-btn").style.opacity = "0";
+            }
+            getNthParent(button, 3).remove();
+        }
+        
         function addExercise(button){
             const mainList = button.parentElement.parentElement.parentElement;
             const parentLi = document.createElement('li');
@@ -71,7 +81,7 @@
             thirdRow.innerHTML = '<input type="text" placeholder="Notes">'
 
             firstRow.querySelector("button[title='Remove exercise']").addEventListener('click', function() {
-                this.parentElement.parentElement.parentElement.remove();
+                deleteExercise(this);
             });
             exerciseUl.appendChild(firstRow);
             exerciseUl.appendChild(secondRow);
@@ -83,6 +93,7 @@
             const colBtn = button.parentElement.querySelector("button[title='Collapse workout']");
             toggleExerciseDisplay(exerciseList);
             colBtn.style.rotate = "30deg";
+            colBtn.style.opacity = "100%";
         }
     </script>
     <title>Edit Split</title>
@@ -148,25 +159,25 @@
                                     <path d="M13.5,35.5L56.5,35.5M35,57L35,14" style="fill:none;stroke-width:6px;"/>
                                 </g>
                             </svg>
-                            </button>
-                            <select>
-                                <option>Weighted</option>
-                                <option>Bodyweight</option>
-                                <option>Assisted</option>
-                            </select>
-                            <button class="del-btn" title="Remove exercise">
-                                <svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;">
-                                    <g id="Layer13" transform="matrix(1,0,0,1,1.42109e-14,-0.905512)">
-                                        <path d="M50.685,24.5L47.5,57.5L22.5,57.5L19.315,24.5M13,24.5L19.315,24.5M50.685,24.5L57,24.5M19.315,24.5L27,24.5M27,24.5L43,24.5M43,24.5L50.685,24.5M27,24.5L27,17.679C27,15.596 28.691,13.906 30.774,13.906L39.226,13.906C41.309,13.906 43,15.596 43,17.679L43,24.5" style="fill:none;stroke-width:6px;"/>
-                                        <g transform="matrix(0.996195,-0.0871557,0.0871557,0.996195,-8.63745,2.73691)">
-                                            <path d="M35,32L35,49" style="fill:none;stroke-width:4px;"/>
-                                        </g>
-                                        <g transform="matrix(0.996195,0.0871557,-0.0871557,0.996195,8.90382,-3.36399)">
-                                            <path d="M35,32L35,49" style="fill:none;stroke-width:4px;"/>
-                                        </g>
+                        </button>
+                        <select>
+                            <option>Weighted</option>
+                            <option>Bodyweight</option>
+                            <option>Assisted</option>
+                        </select>
+                        <button class="del-btn" title="Remove exercise">
+                            <svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;">
+                                <g id="Layer13" transform="matrix(1,0,0,1,1.42109e-14,-0.905512)">
+                                    <path d="M50.685,24.5L47.5,57.5L22.5,57.5L19.315,24.5M13,24.5L19.315,24.5M50.685,24.5L57,24.5M19.315,24.5L27,24.5M27,24.5L43,24.5M43,24.5L50.685,24.5M27,24.5L27,17.679C27,15.596 28.691,13.906 30.774,13.906L39.226,13.906C41.309,13.906 43,15.596 43,17.679L43,24.5" style="fill:none;stroke-width:6px;"/>
+                                    <g transform="matrix(0.996195,-0.0871557,0.0871557,0.996195,-8.63745,2.73691)">
+                                        <path d="M35,32L35,49" style="fill:none;stroke-width:4px;"/>
                                     </g>
-                                </svg>
-                            </button>
+                                    <g transform="matrix(0.996195,0.0871557,-0.0871557,0.996195,8.90382,-3.36399)">
+                                        <path d="M35,32L35,49" style="fill:none;stroke-width:4px;"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </button>
                         </li>
                         <li><input type="number" placeholder="Sets"><div class="line"></div>
                         <span>Rep Scheme</span>
