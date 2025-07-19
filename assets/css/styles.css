@@ -126,7 +126,7 @@ h2{
     z-index: 0;
 }
 .col-btn svg{
-    rotate: 90deg;
+    rotate: 0deg;
 }
 .col-btn svg{
     stroke: var(--main-text-color);

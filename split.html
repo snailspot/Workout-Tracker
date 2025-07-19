@@ -44,26 +44,28 @@
 
         function addCollapseButtons(splitList){
             const activeDays = Array.from(splitList).filter(el => el.innerHTML !== '<a>Rest day</a>');
-            const colBtnIcon = '<svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;"><g id="Layer10"><path d="M13.5,35.5L56.5,35.5" style="fill:none;stroke-width:6px;"/></g></svg>'
+            const colBtnIcon = '<svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;"><g transform="matrix(1.21431,4.00013e-31,-4.00013e-31,-1.21431,-7.60811,77.501)"><g id="Layer14"><path d="M21.793,46.529L35.5,20L49.207,46.529" style="fill:none;stroke-width:5px;"/></g></g></svg>'
 
             activeDays.forEach(el => {
-                const colBtn = document.createElement('button');
-                colBtn.innerHTML = colBtnIcon;
-                colBtn.classList.add("col-btn");
-                colBtn.setAttribute('title', 'Collapse workout');
-                colBtn.addEventListener('click', () => { collapseWorkout(colBtn);});
-                el.parentElement.appendChild(colBtn);
+                if (getNthParent(el, 2).querySelector(".exercise")){
+                    const colBtn = document.createElement('button');
+                    colBtn.innerHTML = colBtnIcon;
+                    colBtn.classList.add("col-btn");
+                    colBtn.setAttribute('title', 'Collapse workout');
+                    colBtn.addEventListener('click', () => { collapseWorkout(colBtn);});
+                    el.parentElement.appendChild(colBtn);
+                }
             });
         }
 
         function collapseWorkout(button){
-            const workout = button.parentElement.parentElement.querySelectorAll(".exercise")
+            const workout = getNthParent(button, 2).querySelectorAll(".exercise");
             if (workout[0].parentElement.style.display === "none"){
                 toggleExerciseDisplay(workout, true, "flex");
-                button.style.rotate = "30deg";
+                button.style.rotate = "0deg";
             }else{
                 toggleExerciseDisplay(workout, false);
-                button.style.rotate = "90deg";
+                button.style.rotate = "180deg";
             }
         }
 
