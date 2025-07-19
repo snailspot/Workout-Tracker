@@ -1,0 +1,179 @@
+.split-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    list-style: none;
+}
+.list-container{
+    width: 80%;
+}
+.split{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    border-top: 2px solid var(--highlight-2-color);
+
+    position: relative;
+}
+.split li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: var(--xs-padding) 0 0 calc(-1 * var(--l-padding));
+    padding: var(--xs-padding) 0 0 0;
+    position: relative;
+
+    font-size: var(--caption);
+    font-weight: bold;
+    
+    transition: all 0.3s;
+}
+.split li:first-child{
+    padding-bottom: var(--xs-padding);
+}
+.split li:nth-child(2){
+    margin: 0 0 var(--m-padding) calc(-1 * var(--sm-padding));
+}
+.split-list li:not(:first-child){
+    justify-content: center;
+}
+.split-list li span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    margin: 0 var(--m-padding) 0 0 ;
+}
+.exercise{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+    margin-left: calc(-1 * var(--sm-padding));
+
+    transition: all 0.3s;
+}
+.exercise div{
+    margin: var(--xs-padding) 0;
+}
+.exercise div:last-child{
+    margin-bottom: var(--sm-padding) !important;
+}
+.exercise div:not(.exercise-name, .exercise-notes){
+    display: flex;
+    margin: calc(-1 * var(--xs-padding)) 0;
+    margin-left: var(--l-padding);
+}
+.exercise span{
+    display: flex;
+    flex-direction: column;   
+}
+.exercise span p{
+    margin-left: var(--sm-padding);
+    
+    padding: var(--xs-padding);
+    min-height: var(--sm-padding);
+    width: var(--input-width);
+
+    border-radius: var(--xs-padding);
+
+    background-color: var(--second-div-color); 
+}
+.exercise div span:first-child p{
+    width: calc(0.4* var(--input-width));
+}
+.exercise-name{
+    padding-bottom: var(--xs-padding);
+    font-size: var(--small-headline);
+}
+.exercise-notes{
+    padding-bottom: var(--sm-padding);
+    height: auto;
+    background-color: var(--screen-color) !important;
+}
+.exercise-notes:empty{
+    display: none;
+}
+.split input[type="number"]{
+    height: var(--input-height);
+    width: var(--input-width);
+    margin: 0 0 0 var(--xs-padding);
+
+    font-weight: bold;
+    font-size: var(--caption);
+    text-align: center;
+
+    border: 2px solid var(--nav-bar-color);
+    border-radius: var(--xs-padding);
+    
+    color: var(--sub-text-color);
+    background-color: var(--second-div-color);
+
+    transition: all 0.3s;
+}
+.split input:not(:placeholder-shown){
+    background-color: var(--sub-text-color);
+    color: var(--screen-color);
+}
+.split input:focus{
+    outline: none;
+    border-color: var(--sub-text-color);
+    box-shadow: 0 0 0 2px var(--sub-text-color);
+}
+.name-container{
+    position: relative;
+}
+.workout-name{
+    padding: 0;
+    left: 80px;
+    position: relative;
+}
+.workout-name a{
+    padding: 0;
+    font-size: var(--small-headline);
+    font-weight: bold; 
+}
+.day{
+    position: absolute;
+    left: 0px;
+    
+    font-size: var(--caption);
+    font-weight: bold;
+}
+.split div:not(.exercise):not(.exercise div){
+    height: var(--divider-height);
+    margin-left: var(--sm-padding);
+
+    border-left: 3px solid var(--highlight-2-color);
+}
+.right-btns{
+    margin-left: auto;
+    margin-right: var(--xs-padding);
+    display: flex;
+
+    font-size: var(--small-headline);
+}
+.notes{
+    width: 98%;
+    height: auto;
+    padding: var(--xs-padding) var(--sm-padding);
+
+    border-radius: var(--sm-padding);
+
+    background-color: var(--second-div-color);
+}
+.split-list li:has(> .notes:empty){
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+.col-btn{
+    right: var(--sm-padding);
+}
