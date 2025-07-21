@@ -191,10 +191,25 @@
     stroke: var(--screen-color);
     stroke-width: 2.5px;
 }
-.muscle-clicked{
+.muscle-hover{
+    fill: var(--highlight-color);
+    stroke: var(--highlight-color);
+}
+.muscle-worked-primary{
+    fill: var(--highlight-color);
+    stroke: var(--highlight-color);
+}
+.muscle-hover-primary{
     fill: var(--highlight-2-color) !important;
     stroke: var(--highlight-2-color) !important;
-
+}
+.muscle-worked-secondary{
+    fill: var(--highlight-2-color);
+    stroke: var(--highlight-2-color);
+}
+.muscle-hover-secondary{
+    fill: var(--screen-color) !important;
+    stroke: var(--screen-color) !important;
 }
 .add-exercise{
     position: absolute;

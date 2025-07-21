@@ -17,25 +17,40 @@
                 muscleG.forEach(g => {
                     g.style.transition = "0.6s";
                     g.title = muscleName;
-                    g.addEventListener('click', () =>{
-                        muscle.classList.toggle("muscle-clicked");
-                    });
-                    g.addEventListener('mouseenter', () => {
-                        if(! muscle.classList.contains("muscle-clicked")){
-                            muscle.style.fill = "var(--highlight-color)";
-                            muscle.style.stroke = "var(--highlight-color)";
-                        }
-                    });
-                    g.addEventListener('mouseleave', () => {
-                        if(! muscle.classList.contains("muscle-clicked")){
-                            muscle.style.fill = "var(--screen-color)";
-                            muscle.style.stroke = "var(--screen-color)";
-                        }
-                    });
-                    
+                    addColorToggle(g, muscle);
                 });
             });
         });
+
+        function addColorToggle(element, elementParent){
+            element.addEventListener('click', () =>{
+                if (elementParent.classList.contains("muscle-hover")){
+                    elementParent.classList.add("muscle-worked-primary");
+                    elementParent.classList.remove("muscle-hover");
+                }else if (elementParent.classList.contains("muscle-worked-primary")){
+                    elementParent.classList.add("muscle-worked-secondary"); 
+                    elementParent.classList.remove("muscle-worked-primary")
+                }else { elementParent.classList.remove("muscle-worked-secondary")}
+            });
+            element.addEventListener('mouseenter', () => {
+                if(elementParent.classList.length === 0){
+                    elementParent.classList.add("muscle-hover");
+                } else if (elementParent.classList.contains("muscle-worked-primary")){
+                    elementParent.classList.add("muscle-hover-primary");
+                } else if (elementParent.classList.contains("muscle-worked-secondary")){
+                    elementParent.classList.add("muscle-hover-secondary");
+                }
+            });
+            element.addEventListener('mouseleave', () => {
+                if(elementParent.classList.contains("muscle-hover")){
+                    elementParent.classList.remove("muscle-hover");
+                } else if (elementParent.classList.contains("muscle-hover-primary")){
+                    elementParent.classList.remove("muscle-hover-primary");
+                } else if (elementParent.classList.contains("muscle-hover-secondary")){
+                    elementParent.classList.remove("muscle-hover-secondary");
+                }
+            });
+        }
     </script>
     <title>Create Exercise</title>
 </head>
