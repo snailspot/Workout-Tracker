@@ -168,3 +168,27 @@
 .hide-btn svg{
     stroke: var(--scroll-bar-color) !important;
 }
+.muscle-map{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 500px;
+
+    background-color: var(--second-div-color);
+
+    border-radius: 30px;
+}
+.muscle-map svg g{
+    transition: 0.3s;
+}
+.muscle-map g[id="background"]{
+    fill: var(--sub-text-color);
+    stroke: var(--sub-text-color);
+}
+.muscle-map:not(#background){
+    fill: var(--screen-color);
+    stroke: var(--screen-color);
+    stroke-width: 2.5px;
+}
