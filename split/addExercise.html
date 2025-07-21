@@ -17,14 +17,22 @@
                 muscleG.forEach(g => {
                     g.style.transition = "0.6s";
                     g.title = muscleName;
+                    g.addEventListener('click', () =>{
+                        muscle.classList.toggle("muscle-clicked");
+                    });
                     g.addEventListener('mouseenter', () => {
-                        muscle.style.fill = "var(--highlight-color)";
-                        muscle.style.stroke = "var(--highlight-color)";
+                        if(! muscle.classList.contains("muscle-clicked")){
+                            muscle.style.fill = "var(--highlight-color)";
+                            muscle.style.stroke = "var(--highlight-color)";
+                        }
                     });
                     g.addEventListener('mouseleave', () => {
-                        muscle.style.fill = "var(--screen-color)";
-                        muscle.style.stroke = "var(--screen-color)";
+                        if(! muscle.classList.contains("muscle-clicked")){
+                            muscle.style.fill = "var(--screen-color)";
+                            muscle.style.stroke = "var(--screen-color)";
+                        }
                     });
+                    
                 });
             });
         });
@@ -68,6 +76,7 @@
         </nav>
         <div class="page-path"><p>Split / Edit-Split / Add-Exercise</p></div>
         <div class="main main-path-bar">
+            <div class="add-exercise">
             <header>
                 <input type="text" placeholder="Exercise Name" class="split-name-form">
             </header>
@@ -329,7 +338,7 @@
                     </g>
                 </svg>
 
-            </div>
+            </div></div>
         </div>
         <nav class="nav-bottom">
             <ul>
