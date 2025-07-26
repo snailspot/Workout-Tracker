@@ -187,8 +187,8 @@
     stroke: var(--sub-text-color);
 }
 .muscle-map:not(#background){
-    fill: var(--screen-color);
-    stroke: var(--screen-color);
+    fill: var(--nav-bg-color);
+    stroke: var(--nav-bg-color);
     stroke-width: 2.5px;
 }
 .muscle-hover{
@@ -208,20 +208,41 @@
     stroke: var(--highlight-2-color);
 }
 .muscle-hover-secondary{
-    fill: var(--screen-color) !important;
-    stroke: var(--screen-color) !important;
+    fill: var(--nav-bg-color) !important;
+    stroke: var(--nav-bg-color) !important;
+}
+.muscles-worked{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    width: 520px;
+    height: 120px;
+    margin-bottom: var(--m-padding);
+
+    border-radius: var(--m-padding);
+
+    
+}
+.muscles-worked div{
+    background-color: var(--second-div-color);
+    width: 240px;
+    border-radius: var(--m-padding);
+}
+.muscles-worked ul{
+    list-style: none;
+    text-align: left;
+    width: 220px;
+    height: 80px;
+    overflow-y: scroll;
 }
 .add-exercise{
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 99.7%;
-    left: 1px;
-    top: 92px;
     margin: 0;
     padding: 0;
 
-    background-color: var(--nav-bg-color);
 }
