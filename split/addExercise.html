@@ -68,16 +68,27 @@
         function updateMuscles(primaryMuscles, secondaryMuscles){
             const primaryUl = document.getElementById("primary");
             const secondaryUl = document.getElementById("secondary");
+
             primaryUl.innerHTML = ""
             secondaryUl.innerHTML = ""
+
+            function formatMuscleText(string){
+                string = string.split(/(?=[A-Z])/);
+                if (string.length > 1){
+                    string = string.reduce((str, currStr) => str + " " + currStr.charAt(0).toUpperCase() + currStr.slice(1));
+                    return string.charAt(0).toUpperCase() +string.slice(1);
+                } else {
+                    return string[0].charAt(0).toUpperCase() + string[0].slice(1);
+                }
+            }
             primaryMuscles.forEach(muscle => {
                 const li = document.createElement("li");
-                li.innerHTML = muscle;
+                li.innerHTML = formatMuscleText(muscle);
                 primary.appendChild(li);
             });
             secondaryMuscles.forEach(muscle => {
                 const li = document.createElement("li");
-                li.innerHTML = muscle;
+                li.innerHTML = formatMuscleText(muscle);
                 secondary.appendChild(li);
             });
         }

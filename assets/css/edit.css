@@ -227,14 +227,18 @@
 .muscles-worked div{
     background-color: var(--second-div-color);
     width: 240px;
-    border-radius: var(--m-padding);
+    border-radius: var(--sm-padding);
 }
 .muscles-worked ul{
+    margin-top: var(--xs-padding);
     list-style: none;
     text-align: left;
     width: 220px;
     height: 80px;
     overflow-y: scroll;
+}
+.muscles-worked h4{
+    margin-top: var(--sm-padding);
 }
 .add-exercise{
     position: relative;
