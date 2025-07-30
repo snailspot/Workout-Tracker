@@ -219,23 +219,48 @@
     width: 520px;
     height: 120px;
     margin-bottom: var(--m-padding);
-
     border-radius: var(--m-padding);
-
-    
 }
 .muscles-worked div{
-    background-color: var(--second-div-color);
-    width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 236px;
     border-radius: var(--sm-padding);
+    padding-bottom: var(--sm-padding);
+}
+.muscles-worked div div{
+    margin-top: calc(-1 * var(--sm-padding));
+    background-color: var(--nav-bg-color);
+    padding-bottom: 0;
+
+    width: 212px;
+    height: 102px;
 }
 .muscles-worked ul{
-    margin-top: var(--xs-padding);
+    padding: 0 var(--sm-padding) 0 var(--xs-padding);
+    width: 70%;
+    height: 100%;
+    border-radius: var(--sm-padding);
+    overflow-y: scroll;
+
     list-style: none;
     text-align: left;
-    width: 220px;
-    height: 80px;
-    overflow-y: scroll;
+}
+.muscles-worked ul::-webkit-scrollbar-track {
+    background: var(--nav-bg-color); 
+}
+.muscles-worked ul::-webkit-scrollbar-thumb {
+    background: var(--sub-text-color); 
+}
+.muscles-worked li{
+    font-size: var(--caption);
+    font-weight: bold;
+    padding: 2px 0;
+}
+.muscles-worked li::before{
+    content: "- ";
 }
 .muscles-worked h4{
     margin-top: var(--sm-padding);
@@ -249,4 +274,8 @@
     margin: 0;
     padding: 0;
 
+}
+.add-exercise h2{
+    font-weight: bold;
+    padding-top: var(--m-padding);
 }
