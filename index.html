@@ -6,19 +6,9 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/daily.css">
+    <link rel="stylesheet" href="assets/css/radio_btn.css">
     <script src="assets/js/script.js"></script>
     <title>Today</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', function(){
-            const buttons = document.querySelectorAll("li.exercise button[type='submit']");
-            buttons.forEach(button => {
-                button.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    button.classList.toggle("checked-set");
-                    button.innerHTML = button.classList.contains("checked-set") ? '\u2713' : "";
-                });
-            });
-        });
     </script>
 </head>
 <body>
@@ -93,16 +83,16 @@
                         </svg>
                     </button></li>
                         <li><span class="notes">Last set drop set</span></li>
-                        <li><button type="submit"></button>
-                            <span>Set 1<div></div></span>
+                        <li><label class="radio-container">Set 1<input type="checkbox"><span class="radio-button"></span></label>
+                            <span><div></div></span>
                             <span>Reps: <input type="number" placeholder="10 - 12"></span>
                             <span>Weight (kg): <input type="number" placeholder="22"></li>
-                        <li><button type="submit"></button>
-                            <span>Set 2<div></div></span>
+                        <li><label class="radio-container">Set 2<input type="checkbox"><span class="radio-button"></span></label>
+                            <span><div></div></span>
                             <span>Reps: <input type="number" placeholder="10 - 12"></span>
                             <span>Weight (kg): <input type="number" placeholder="22"></li>
-                        <li><button type="submit"></button>
-                            <span>Set 3<div></div></span>
+                        <li><label class="radio-container">Set 3<input type="checkbox"><span class="radio-button"></span></label>
+                            <span><div></div></span>
                             <span>Reps: <input type="number" placeholder="10 - 12"></span>
                             <span>Weight (kg): <input type="number" placeholder="22"></li>
                         </ul>
@@ -120,14 +110,14 @@
                         </svg>
                     </button></li>
                         <li><span class="notes">Myorep match sets</span></li>
-                        <li><button type="submit"></button>
-                            <span>Set 1<div></div></span>
+                        <li><label class="radio-container">Set 1<input type="checkbox"><span class="radio-button"></span></label>
+                            <span><div></div></span>
                             <span>Reps: <input type="number" placeholder="10 - 12"></span></li>
-                        <li><button type="submit"></button>
-                            <span>Set 2<div></div></span>
+                        <li><label class="radio-container">Set 2<input type="checkbox"><span class="radio-button"></span></label>
+                            <span><div></div></span>
                             <span>Reps: <input type="number" placeholder="10 - 12"></span></li>
-                        <li><button type="submit"></button>
-                            <span>Set 3<div></div></span>
+                        <li><label class="radio-container">Set 3<input type="checkbox"><span class="radio-button"></span></label>
+                            <span><div></div></span>
                             <span>Reps: <input type="number" placeholder="10 - 12"></span></li>
                         </ul>
                     </li>
@@ -143,14 +133,14 @@
                             </g>
                         </svg>
                     </button></li>
-                        <li><button type="submit"></button>
-                            <span>Set 1<div></div></span>
+                        <li><label class="radio-container">Set 1<input type="checkbox"><span class="radio-button"></span></label>
+                            <span><div></div></span>
                             <span>Time: <input type="number" placeholder="100s"></span></li>
-                        <li><button type="submit"></button>
-                            <span>Set 2<div></div></span>
+                        <li><label class="radio-container">Set 2<input type="checkbox"><span class="radio-button"></span></label>
+                            <span><div></div></span>
                             <span>Time: <input type="number" placeholder="100s"></span></li>
-                        <li><button type="submit"></button>
-                            <span>Set 3<div></div></span>
+                        <li><label class="radio-container">Set 3<input type="checkbox"><span class="radio-button"></span></label>
+                            <span><div></div></span>
                             <span>Time: <input type="number" placeholder="100s"></span></li>
                         </ul>
                     </li>
