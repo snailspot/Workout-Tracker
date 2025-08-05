@@ -173,7 +173,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 350px;
     width: 500px;
     padding-bottom: var(--m-padding);
 
@@ -217,7 +217,7 @@
     justify-content:space-around;
     align-items: center;
     width: 520px;
-    height: 120px;
+    height: 132px;
     margin-bottom: var(--m-padding);
     border-radius: var(--m-padding);
 }
@@ -232,11 +232,11 @@
 }
 .muscles-worked div div{
     margin-top: calc(-1 * var(--sm-padding));
-    background-color: var(--nav-bg-color);
+    
     padding-bottom: 0;
 
-    width: 212px;
-    height: 102px;
+    width: 216px;
+    height: 124px;
 }
 .muscles-worked ul{
     padding: 0 var(--sm-padding) 0 var(--xs-padding);
@@ -247,12 +247,14 @@
 
     list-style: none;
     text-align: left;
+    transition: 0.3s all;
 }
 .muscles-worked ul::-webkit-scrollbar-track {
-    background: var(--nav-bg-color); 
+    background: var(--screen-color); 
 }
 .muscles-worked ul::-webkit-scrollbar-thumb {
     background: var(--sub-text-color); 
+    
 }
 .muscles-worked li{
     font-size: var(--caption);
@@ -275,7 +277,26 @@
     padding: 0;
 
 }
-.add-exercise h2{
+.exercise-form{
+    display: flex;
+    flex-direction: row;
+}
+
+.exercise-form ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    margin-left: var(--m-padding);
+}
+.exercise-form li{
+    margin-left: 0;
+    margin-right: auto;
+
+    margin-top: 0;
+    margin-bottom: 4px;
+
+    font-size: var(--caption);
     font-weight: bold;
-    padding-top: var(--m-padding);
 }

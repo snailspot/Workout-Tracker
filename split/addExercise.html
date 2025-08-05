@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/nav.css">
     <link rel="stylesheet" href="../assets/css/edit.css">
+    <link rel="stylesheet" href="../assets/css/radio_btn.css">
     <script src="../assets/js/script.js"></script>
     <script>
         let primaryMuscles = [];
@@ -93,6 +94,11 @@
             });
         }
     </script>
+    <style>
+        .main{
+            overflow-y: hidden !important;
+        }
+    </style>
     <title>Create Exercise</title>
 </head>
 <body>
@@ -133,10 +139,34 @@
         <div class="page-path"><p>Split / Edit-Split / Add-Exercise</p></div>
         <div class="main main-path-bar">
             <div class="add-exercise">
-                <header>
-                    <input type="text" placeholder="Exercise Name" class="split-name-form">
-                </header>
-                <h2>Muscles Worked:</h2>
+                <div class="exercise-form edit-form">
+                    <input type="text" placeholder="Exercise Name">
+                    <ul>
+                        <li><label class="radio-container">Weighted
+                                <input type="checkbox">
+                                <span class="radio-button"></span>
+                            </label></li>
+                        <li><label class="radio-container">Bodywieght
+                                <input type="checkbox">
+                                <span class="radio-button"></span>
+                            </label></li>
+                        <li><label class="radio-container">Assisted
+                                <input type="checkbox">
+                                <span class="radio-button"></span>
+                            </label></li>
+                    </ul>
+                    <ul>
+                        <li></li>
+                        <li><label class="radio-container">Reps
+                                <input type="checkbox">
+                                <span class="radio-button"></span>
+                            </label></li>
+                        <li><label class="radio-container">Time
+                                <input type="checkbox">
+                                <span class="radio-button"></span>
+                            </label></li>
+                    </ul>
+                </div>
                 <div class="muscle-map">
                     <svg width="100%" height="100%" viewBox="0 0 900 750" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
                         <g id="background" transform="matrix(1,0,0,0.903694,-190.362,-1.34661)">
@@ -406,9 +436,6 @@
                         <div><ul id="secondary"></ul></div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <h1> hello</h1>
             </div>
         </div>
         <nav class="nav-bottom">
