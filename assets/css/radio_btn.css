@@ -6,6 +6,9 @@
     padding-left: var(--m-padding);
     cursor: pointer;
 
+    font-size: var(--caption);
+    font-weight: bold;
+
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -32,19 +35,21 @@
 .radio-button:after{
     content: "";
     position: absolute;
-    display: none;
+    opacity: 0%;
 }
 .radio-container .radio-button:after {
-    top: calc(-0.4 * var(--sm-padding));
+    top: calc(-0.2 * var(--sm-padding));
     left: calc(0.2 * var(--sm-padding));
-    width: calc(0.5 * var(--sm-padding));
-    height: var(--sm-padding);
+    width: calc(0.4 * var(--sm-padding));
+    height: calc(0.8 * var(--sm-padding));
     border: solid var(--main-text-color);
     border-width: 0 3px 3px 0;
 
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+
+    transition: 0.3s all;
 }
 .radio-container:hover input ~ .radio-button{
     background-color: var(--highlight-color);
@@ -53,7 +58,6 @@
     background-color: var(--highlight-2-color);
 }
 .radio-container input:checked ~ .radio-button:after{
-    display: block;
+    opacity: 100%;
 }
-
 

@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <link rel="stylesheet" href="../../assets/css/nav.css">
     <link rel="stylesheet" href="../../assets/css/edit.css">
+    <link rel="stylesheet" href="../../assets/css/radio_btn.css">
     <script src="../assets/js/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function(){
-            const restBtn = document.querySelectorAll(".edit-form li button[type='submit']");
+            const restBtn = document.querySelectorAll(".edit-form li label[class='radio-container']");
             const addExerciseBtn = document.querySelectorAll(".edit-form li button[title='Add exercise']");
             const delExerciseBtn = document.querySelectorAll(".edit-form li button[title='Remove exercise']");
             const colBtn = document.querySelectorAll(".edit-form li button[title='Collapse workout']");
@@ -27,13 +28,13 @@
         });
 
         function toggleRest(button){
-            const workoutName = button.parentElement.querySelector("input");
+            const workoutName = button.parentElement.querySelector("input[type='text']");
             const addBtn = button.parentElement.querySelector(".add-btn");
             const colBtn = button.parentElement.querySelector(".col-btn");
-            const exercise = button.parentElement.parentElement.parentElement.querySelectorAll("li:not(:first-child) ul");
-            button.classList.toggle("checked-set");
-            button.innerHTML = button.classList.contains("checked-set") ? '\u2713' : "";
-            
+            const exercise = getNthParent(button, 3).querySelectorAll("li:not(:first-child) ul");
+            const radioButton = button.querySelector("input[type='checkbox']");
+
+            radioButton.checked = !radioButton.checked;
             workoutName.classList.toggle("rest-day");
             workoutName.value = "";
             addBtn.classList.toggle("hide-btn");
@@ -138,7 +139,7 @@
             <ul class="edit-form">
                 <li><h3>Mon</h3>
                     <div class="edit-workout-cont">
-                        <span>Rest Day</span><button type="submit"></button>
+                        <label class="radio-container">Rest Day<input type="checkbox"><span class="radio-button"></span></label>
                         <input type="text" placeholder="Workout Name">
                         <button class="add-btn" title="Add exercise">
                             <svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;">
@@ -158,7 +159,7 @@
             </ul><ul class="edit-form">
                 <li><h3>Tue</h3>
                     <div class="edit-workout-cont">
-                        <span>Rest Day</span><button type="submit"></button>
+                        <label class="radio-container">Rest Day<input type="checkbox"><span class="radio-button"></span></label>
                         <input type="text" placeholder="Workout Name">
                         <button class="add-btn" title="Add exercise">
                             <svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;">
@@ -178,7 +179,7 @@
             </ul><ul class="edit-form">
                 <li><h3>Wed</h3>
                     <div class="edit-workout-cont">
-                        <span>Rest Day</span><button type="submit"></button>
+                        <label class="radio-container">Rest Day<input type="checkbox"><span class="radio-button"></span></label>
                         <input type="text" placeholder="Workout Name">
                         <button class="add-btn" title="Add exercise">
                             <svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;">
@@ -198,7 +199,7 @@
             </ul><ul class="edit-form">
                 <li><h3>Thu</h3>
                     <div class="edit-workout-cont">
-                        <span>Rest Day</span><button type="submit"></button>
+                        <label class="radio-container">Rest Day<input type="checkbox"><span class="radio-button"></span></label>
                         <input type="text" placeholder="Workout Name">
                         <button class="add-btn" title="Add exercise">
                             <svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;">
@@ -218,7 +219,7 @@
             </ul><ul class="edit-form">
                 <li><h3>Fri</h3>
                     <div class="edit-workout-cont">
-                        <span>Rest Day</span><button type="submit"></button>
+                        <label class="radio-container">Rest Day<input type="checkbox"><span class="radio-button"></span></label>
                         <input type="text" placeholder="Workout Name">
                         <button class="add-btn" title="Add exercise">
                             <svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;">
@@ -238,7 +239,7 @@
             </ul><ul class="edit-form">
                 <li><h3>Sat</h3>
                     <div class="edit-workout-cont">
-                        <span>Rest Day</span><button type="submit"></button>
+                        <label class="radio-container">Rest Day<input type="checkbox"><span class="radio-button"></span></label>
                         <input type="text" placeholder="Workout Name">
                         <button class="add-btn" title="Add exercise">
                             <svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;">
@@ -258,7 +259,7 @@
             </ul><ul class="edit-form">
                 <li><h3>Sun</h3>
                     <div class="edit-workout-cont">
-                        <span>Rest Day</span><button type="submit"></button>
+                        <label class="radio-container">Rest Day<input type="checkbox"><span class="radio-button"></span></label>
                         <input type="text" placeholder="Workout Name">
                         <button class="add-btn" title="Add exercise">
                             <svg width="75%" height="75%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.57558;">
